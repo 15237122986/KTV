@@ -71,6 +71,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="MysqlHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -120,6 +121,14 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Google.Protobuf.dll" />
+    <Content Include="MySql.Data.dll" />
+    <Content Include="MySql.Data.EntityFramework.dll" />
+    <Content Include="MySQL.Data.EntityFrameworkCore.Design.dll" />
+    <Content Include="MySQL.Data.EntityFrameworkCore.dll" />
+    <Content Include="MySql.Web.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
