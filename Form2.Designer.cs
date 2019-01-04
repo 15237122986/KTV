@@ -1,4 +1,4 @@
-﻿namespace KTV
+namespace KTV
 {
     partial class Form2
     {
@@ -54,7 +54,7 @@
             this.songNameListBox = new System.Windows.Forms.ListBox();
             this.button95 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.singerPanel1 = new System.Windows.Forms.Panel();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.button49 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -72,7 +72,7 @@
             this.publicPanel1.SuspendLayout();
             this.publicpanel2.SuspendLayout();
             this.songNamePanel.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.singerPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,7 @@
             // Vounmn
             // 
             this.Vounmn.Location = new System.Drawing.Point(461, 21);
+            this.Vounmn.Margin = new System.Windows.Forms.Padding(4);
             this.Vounmn.Name = "Vounmn";
             this.Vounmn.Size = new System.Drawing.Size(66, 56);
             this.Vounmn.TabIndex = 5;
@@ -319,21 +320,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // panel5
+            // singerPanel1
             // 
-            this.panel5.Controls.Add(this.listBox3);
-            this.panel5.Controls.Add(this.button49);
-            this.panel5.Controls.Add(this.textBox13);
-            this.panel5.Controls.Add(this.button14);
-            this.panel5.Controls.Add(this.button11);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Location = new System.Drawing.Point(517, 53);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(274, 293);
-            this.panel5.TabIndex = 75;
+            this.singerPanel1.Controls.Add(this.listBox3);
+            this.singerPanel1.Controls.Add(this.button49);
+            this.singerPanel1.Controls.Add(this.textBox13);
+            this.singerPanel1.Controls.Add(this.button14);
+            this.singerPanel1.Controls.Add(this.button11);
+            this.singerPanel1.Controls.Add(this.button4);
+            this.singerPanel1.Controls.Add(this.button3);
+            this.singerPanel1.Controls.Add(this.button2);
+            this.singerPanel1.Controls.Add(this.button1);
+            this.singerPanel1.Location = new System.Drawing.Point(776, 80);
+            this.singerPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.singerPanel1.Name = "singerPanel1";
+            this.singerPanel1.Size = new System.Drawing.Size(411, 440);
+            this.singerPanel1.TabIndex = 75;
             // 
             // listBox3
             // 
@@ -451,6 +453,15 @@
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
             // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 18;
+            this.listBox2.Location = new System.Drawing.Point(932, 0);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(242, 58);
+            this.listBox2.TabIndex = 14;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -472,8 +483,8 @@
             this.publicpanel2.PerformLayout();
             this.songNamePanel.ResumeLayout(false);
             this.songNamePanel.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.singerPanel1.ResumeLayout(false);
+            this.singerPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -507,7 +518,7 @@
         private System.Windows.Forms.ListBox songNameListBox;
         private System.Windows.Forms.Button button95;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel singerPanel1;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Button button49;
         private System.Windows.Forms.TextBox textBox13;
