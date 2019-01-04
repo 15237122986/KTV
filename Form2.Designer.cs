@@ -50,8 +50,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.songNamePanel = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.searchBox = new System.Windows.Forms.ListBox();
+            this.songNameTextBox = new System.Windows.Forms.TextBox();
+            this.songNameListBox = new System.Windows.Forms.ListBox();
             this.button95 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
@@ -274,8 +274,8 @@
             // 
             // songNamePanel
             // 
-            this.songNamePanel.Controls.Add(this.textBox14);
-            this.songNamePanel.Controls.Add(this.searchBox);
+            this.songNamePanel.Controls.Add(this.songNameTextBox);
+            this.songNamePanel.Controls.Add(this.songNameListBox);
             this.songNamePanel.Controls.Add(this.button95);
             this.songNamePanel.Location = new System.Drawing.Point(9, 191);
             this.songNamePanel.Margin = new System.Windows.Forms.Padding(2);
@@ -283,22 +283,25 @@
             this.songNamePanel.Size = new System.Drawing.Size(221, 218);
             this.songNamePanel.TabIndex = 74;
             // 
-            // textBox14
+            // songNameTextBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(31, 14);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(115, 21);
-            this.textBox14.TabIndex = 47;
-            this.textBox14.Text = "歌名";
+            this.songNameTextBox.ForeColor = System.Drawing.Color.LightBlue;
+            this.songNameTextBox.Location = new System.Drawing.Point(31, 14);
+            this.songNameTextBox.Name = "songNameTextBox";
+            this.songNameTextBox.Size = new System.Drawing.Size(115, 21);
+            this.songNameTextBox.TabIndex = 47;
+            this.songNameTextBox.Text = "请输入歌名";
+            this.songNameTextBox.Enter += new System.EventHandler(this.songNameTextBox_Enter);
+            this.songNameTextBox.Leave += new System.EventHandler(this.songNameTextBox_Leave);
             // 
-            // searchBox
+            // songNameListBox
             // 
-            this.searchBox.FormattingEnabled = true;
-            this.searchBox.ItemHeight = 12;
-            this.searchBox.Location = new System.Drawing.Point(15, 41);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(190, 160);
-            this.searchBox.TabIndex = 46;
+            this.songNameListBox.FormattingEnabled = true;
+            this.songNameListBox.ItemHeight = 12;
+            this.songNameListBox.Location = new System.Drawing.Point(15, 41);
+            this.songNameListBox.Name = "songNameListBox";
+            this.songNameListBox.Size = new System.Drawing.Size(190, 160);
+            this.songNameListBox.TabIndex = 46;
             // 
             // button95
             // 
@@ -308,6 +311,7 @@
             this.button95.TabIndex = 49;
             this.button95.Text = "搜索";
             this.button95.UseVisualStyleBackColor = true;
+            this.button95.Click += new System.EventHandler(this.songNameSearch_Click);
             // 
             // contextMenuStrip1
             // 
@@ -499,8 +503,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel songNamePanel;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.ListBox searchBox;
+        private System.Windows.Forms.TextBox songNameTextBox;
+        private System.Windows.Forms.ListBox songNameListBox;
         private System.Windows.Forms.Button button95;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel5;
