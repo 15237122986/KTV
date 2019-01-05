@@ -81,10 +81,6 @@ namespace KTV
                 MediaPlayer1.URL = listSong[0];
                 MediaPlayer1.Ctlcontrols.play();
                 play_button.Text = "暂停";
-
-                
-                    Console.Write(MediaPlayer1.playState.Equals("已停止"));
-                    Console.Write("数字"+MediaPlayer1.playState.Equals("1"));
                     
             }
             else
@@ -92,11 +88,6 @@ namespace KTV
                 MediaPlayer1.Ctlcontrols.pause();
                 play_button.Text = "播放";
             }
-                Console.WriteLine("status*****:" + MediaPlayer1.status);
-                Console.WriteLine("status.....:" + MediaPlayer1.playState);
-                Console.WriteLine(MediaPlayer1.status.Equals("已停止"));
-                Console.WriteLine(MediaPlayer1.playState.Equals("已停止"));
-
             }
             else { MessageBox.Show("没有待播放歌曲了，请点歌！"); }
         }
