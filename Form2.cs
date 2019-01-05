@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +25,11 @@ namespace KTV
         private MySqlDataAdapter SingerAdapter;
         private DataSet dsong;
         private DataSet dsinger;
+        private MySqlCommand findsong,findsinger;
+        private MySqlDataReader sdr,sdr2;
+               
+        private Boolean textBoxHasText = false;
+
         public Form2()
         {
             InitializeComponent();
@@ -32,6 +37,12 @@ namespace KTV
         private void Form2_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection(mysqlconn);
+            this.songNamePanel.Visible = false;
+            this.singerPanel1.Visible = false;
+            this.panel3.Visible = false;
+            this.panel2.Visible = false;
+            this.pinyinPanel.Visible = false;
+            this.singerPanel1.Visible = false;
         }
 
 
@@ -44,19 +55,13 @@ namespace KTV
         {
 
         }
-
+        //歌手点歌
         private void ChooseSinger_Click(object sender, EventArgs e)
         {
-            SongAdapter = new MySqlDataAdapter("select * from singer", conn);
-            dsinger = new DataSet();
-            string singername;
-            SongAdapter.Fill(dsinger, "singer");
-            // dataGridView1.DataSource = dsall.Tables["singer"];//歌手名
-            foreach (DataRow dr in dsinger.Tables["singer"].Rows)
-            {
-                singername = dr.Field<string>("singername");
-                listBox3.Items.Add(singername);
-            }
+            panel1.Visible = false;
+            this.textBox13.Clear();
+            listBox3.Items.Clear();
+            listSongid.Clear();
 
             singerPanel1.Visible = true;
             singerPanel1.BringToFront();
@@ -76,28 +81,228 @@ namespace KTV
 
         private void ChooseCategory_Click(object sender, EventArgs e)
         {
-           //categoryPanel2.Visible = true;
-            //categoryPanel2.BringToFront();
+           this.panel1.Visible = false;
+            this.panel2.Visible = true;
+            this.panel2.BringToFront();
         }
 
         private void ChoosePingyin_Click(object sender, EventArgs e)
-        {       
+        {
+            //this.textBox3.Text = "请输入歌曲歌名的首字母";
+            //this.textBox3.ForeColor = Color.LightBlue;
+            this.textBox3.Clear();
+            this.listBox4.Items.Clear();
+            panel1.Visible = false;
             pinyinPanel.Visible = true;
             pinyinPanel.BringToFront();
         }
 
         private void ChooseSongName_Click(object sender, EventArgs e)
         {
-            songNamePanel.Visible = true;
-            songNamePanel.BringToFront();
+            this.panel1.Visible = false;
+            this.songNameTextBox.Clear();
+            this.songNameListBox.Items.Clear();
+            this.songNamePanel.Visible = true;
+            this.songNamePanel.BringToFront();
         }
 
         private void Home_Click(object sender, EventArgs e)
         {
             panel1.BringToFront();
+            songNamePanel.Visible = false;
+            panel1.Visible = true;
+            panel2.Visible = false;
+            panel3.Visible = false;
+            this.pinyinPanel.Visible = false;
+            this.singerPanel1.Visible = false;
         }
 
-//////////////////////////搜索歌手//////////////////////////////////////
+//////////////////////////////////////////////////////搜索类别////////////////////////////////////////
+ private void LanguageButtons_Click(object sender, EventArgs e)
+        {
+            Button topic = (Button)sender;
+            this.panel2.Visible = false;
+            this.panel3.Visible = true;
+            this.label4.Text = topic.Text;
+            string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\"+topic.Text+".jpg";
+            //this.pictureBox1.Load(picpath);
+            this.listBox1.Items.Clear();
+            listSongid.Clear();
+
+            //显示歌曲列表
+            SongAdapter = new MySqlDataAdapter("select * from song where language = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            string songitem;
+            DataRow dr1;
+            foreach (DataRow dr in dsong.Tables["song"].Rows)
+            {
+                SingerAdapter = new MySqlDataAdapter("select * from singer where singerid= " + dr.Field<int>("singerid"), conn);
+                dsinger = new DataSet();
+                SingerAdapter.Fill(dsinger, "singer");
+
+                dr1 = dsinger.Tables["singer"].Rows[0];
+                songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
+                listBox1.Items.Add(songitem);
+                listSongid.Add(dr.Field<int>("songid") + "");
+            }
+        }
+        private void TopicButtons_Click(object sender, EventArgs e)
+        {
+            Button topic =(Button)sender;
+            this.panel2.Visible = false;
+            this.panel3.Visible=true;
+            this.label4.Text =topic.Text;
+            string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\"+topic.Text+".jpg";
+            //this.pictureBox1.Load(picpath);
+            this.listBox1.Items.Clear();
+            listSongid.Clear();
+
+            //显示歌曲列表
+            SongAdapter = new MySqlDataAdapter("select * from song where songtype = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            string songitem;
+            DataRow dr1;
+            foreach (DataRow dr in dsong.Tables["song"].Rows)
+            {
+                    SingerAdapter = new MySqlDataAdapter("select * from singer where singerid= " + dr.Field<int>("singerid"), conn);
+                    dsinger = new DataSet();
+                    SingerAdapter.Fill(dsinger, "singer");
+
+                    dr1 = dsinger.Tables["singer"].Rows[0];
+                    songitem = dr.Field<string>("songname")+ "  " + dr1.Field<string>("singername");
+                    listBox1.Items.Add(songitem);
+                    listSongid.Add(dr.Field<int>("songid") + "");
+            }
+        }
+        private void MoodButtons_Click(object sender, EventArgs e)
+        {
+            Button topic = (Button)sender;
+            this.panel2.Visible = false;
+            this.panel3.Visible = true;
+            this.label4.Text = topic.Text;
+            string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\" + topic.Text + ".jpg";
+            //this.pictureBox1.Load(picpath);
+            this.listBox1.Items.Clear();
+            listSongid.Clear();
+
+            //显示歌曲列表
+            SongAdapter = new MySqlDataAdapter("select * from song where songtopic = \'" + topic.Text + "\'", conn);//应为mood,改了数据库再说
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            string songitem;
+            DataRow dr1;
+            foreach (DataRow dr in dsong.Tables["song"].Rows)
+            {
+                SingerAdapter = new MySqlDataAdapter("select * from singer where singerid= " + dr.Field<int>("singerid"), conn);
+                dsinger = new DataSet();
+                SingerAdapter.Fill(dsinger, "singer");
+
+                dr1 = dsinger.Tables["singer"].Rows[0];
+                songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
+                listBox1.Items.Add(songitem);
+                listSongid.Add(dr.Field<int>("songid") + "");
+            }
+        }
+        private void GenreButtons_Click(object sender,EventArgs e)
+        {
+            Button topic = (Button)sender;
+            this.panel2.Visible = false;
+            this.panel3.Visible = true;
+            this.label4.Text = topic.Text;
+            //string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\" + topic.Text + ".jpg";
+            string picpath = "";
+            //this.pictureBox1.Load(picpath);
+            this.listBox1.Items.Clear();
+            listSongid.Clear();
+
+            //显示歌曲列表
+            SongAdapter = new MySqlDataAdapter("select * from song where songgenre = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            string songitem;
+            DataRow dr1;
+            foreach (DataRow dr in dsong.Tables["song"].Rows)
+            {
+                SingerAdapter = new MySqlDataAdapter("select * from singer where singerid= " + dr.Field<int>("singerid"), conn);
+                dsinger = new DataSet();
+                SingerAdapter.Fill(dsinger, "singer");
+
+                dr1 = dsinger.Tables["singer"].Rows[0];
+                songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
+                listBox1.Items.Add(songitem);
+                listSongid.Add(dr.Field<int>("songid") + "");
+            }
+        }
+////////////////////////////////////////////////搜索类别////////////////////////////////////////
+
+////////////////////////////////////////////////搜索歌名////////////////////////////////////////
+
+        /*private void songNameTextBox_Enter(object sender,EventArgs e)
+        {
+            if (textBoxHasText == false) songNameTextBox.Text= "";
+            songNameTextBox.ForeColor = Color.Black;
+        }
+        private void songNameTextBox_Leave(object sender,EventArgs e)
+        {
+            if (songNameTextBox.Text == "")
+            {
+                songNameTextBox.Text = "请输入歌名";
+                songNameTextBox.ForeColor = Color.LightBlue;
+                textBoxHasText = false;
+            }
+            else textBoxHasText = true;
+        }*/
+        private void  songNameSearch_Click(object sender, EventArgs e)
+        {
+            if ((this.songNameTextBox.Text != "" && this.songNameTextBox.Text != "请输入歌名"))
+            {
+                //清空上一次搜索出歌曲的列表listBox1
+                songNameListBox.Items.Clear();
+                listSongid.Clear();
+
+                //显示歌曲列表
+                SongAdapter = new MySqlDataAdapter("select * from song where songname = \'" + songNameTextBox.Text + "\'", conn);
+                dsong = new DataSet();
+                SongAdapter.Fill(dsong, "song");
+                string songitem;
+                DataRow dr1;
+                if (dsong.Tables["song"].Rows.Count == 0) MessageBox.Show("对不起，没有找到这首歌！");
+                else
+                {
+                    foreach (DataRow dr in dsong.Tables["song"].Rows)
+                    {
+
+                        SingerAdapter = new MySqlDataAdapter("select * from singer where singerid= " + dr.Field<int>("singerid"), conn);
+                        dsinger = new DataSet();
+                        SingerAdapter.Fill(dsinger, "singer");
+
+                        dr1 = dsinger.Tables["singer"].Rows[0];
+                        songitem = songNameTextBox.Text + "  " + dr1.Field<string>("singername");
+                        songNameListBox.Items.Add(songitem);
+                        listSongid.Add(dr.Field<int>("songid") + "");
+                    }
+                }
+            }
+            else MessageBox.Show("请输入歌名");
+        }
+        //将拼音搜索出的歌曲添加到“已点列表”
+        private void songNameListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = songNameListBox.SelectedIndex;
+            //添加到“已点歌单”
+            listBox2.Items.Add(songNameListBox.Items[index]);
+
+            SongAdapter = new MySqlDataAdapter("select * from song where songid =" + listSongid[index], conn);
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            DataRow dr = dsong.Tables["song"].Rows[0];
+            listSongpath.Add(@dr.Field<string>("path"));
+        }
+        ////////////////////////////////////////////////搜索歌名////////////////////////////////////////
+
+        ////////////////////////////////////////////////////////////搜索歌手//////////////////////////////////////
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -106,6 +311,11 @@ namespace KTV
             listSongid.Clear();
 
             int index = listBox3.SelectedIndex;
+            
+            //显示搜索歌曲的panel
+            panel3.Visible = true;
+            panel3.BringToFront();
+            
             //显示歌手图片
             SingerAdapter = new MySqlDataAdapter("select * from singer where singername= \'" + listBox3.Items[index]+"\'", conn);
             dsinger = new DataSet();
@@ -127,30 +337,16 @@ namespace KTV
                 listBox1.Items.Add(songitem);
                 listSongid.Add(dr.Field<int>("songid") + "");
             }
-
-        }
-
-        //搜索出的歌单
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int index = listBox1.SelectedIndex;
-            //添加到“已点歌单”
-            listBox2.Items.Add(listBox1.Items[index]);
-
-            SongAdapter = new MySqlDataAdapter("select * from song where songid =" +listSongid[index], conn); 
-            dsong = new DataSet();
-            SongAdapter.Fill(dsong, "song");
-            DataRow dr = dsong.Tables["song"].Rows[0];
-            listSongpath.Add(@dr.Field<string>("path"));
+            
         }
 
         //搜索歌手名
         private void button49_Click(object sender, EventArgs e)
         {
             //清空上一次搜索出歌曲的列表listBox1和listSongid
-            listBox1.Items.Clear();
+            this.listBox3.Items.Clear();
             listSongid.Clear();
+            
             //显示歌手图片
             SingerAdapter = new MySqlDataAdapter("select * from singer where singername= \'" + textBox13.Text + "\'", conn);
             dsinger = new DataSet();
@@ -159,28 +355,92 @@ namespace KTV
                 MessageBox.Show("对不起，没有找到该歌手！");
             else
             {
-                DataRow dr1 = dsinger.Tables["singer"].Rows[0];
-                pictureBox1.ImageLocation = @dr1.Field<string>("photopath");
-                //显示歌手名字
-                label4.Text = dr1.Field<string>("singername");
-                //显示歌曲列表
-                string singerid = dr1.Field<int>("singerid") + "";
-                SongAdapter = new MySqlDataAdapter("select * from song where singerid =" + singerid, conn);
-                dsong = new DataSet();
-                SongAdapter.Fill(dsong, "song");
-                string songitem;
-
-                foreach (DataRow dr in dsong.Tables["song"].Rows)
-                {
-                    songitem = dr.Field<string>("songname") + "  " + textBox13.Text;
-                    listBox1.Items.Add(songitem);
-                    listSongid.Add(dr.Field<int>("songid") + "");
+                foreach (DataRow dr in dsinger.Tables["singer"].Rows)
+                {                 
+                    listBox3.Items.Add(dr.Field<string>("singername"));
                 }
             }
-        }
-//////////////////////////搜索歌手//////////////////////////////////////
+            
+            }
 
- //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
+        //将歌手搜索出的歌添加到“已点歌单”
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            int index = listBox1.SelectedIndex;
+            //添加到“已点歌单”
+            listBox2.Items.Add(listBox1.Items[index]);
+
+            SongAdapter = new MySqlDataAdapter("select * from song where songid =" + listSongid[index], conn);
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            DataRow dr = dsong.Tables["song"].Rows[0];
+            listSongpath.Add(@dr.Field<string>("path"));
+        }
+
+        //男歌手
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //清空上一次搜索出歌曲的列表listBox1和listSongid
+            listBox3.Items.Clear();
+            listSongid.Clear();
+
+            SingerAdapter = new MySqlDataAdapter("select * from singer where singercategory= \'" +"男歌手"+"\'", conn);
+            dsinger = new DataSet();
+            SingerAdapter.Fill(dsinger, "singer");
+            foreach (DataRow dr in dsinger.Tables["singer"].Rows)
+            {
+                listBox3.Items.Add(dr.Field<string>("singername"));
+            }     
+    }   
+        //女歌手
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //清空上一次搜索出歌曲的列表listBox1和listSongid
+            listBox3.Items.Clear();
+            listSongid.Clear();
+
+            SingerAdapter = new MySqlDataAdapter("select * from singer where singercategory= \'" + "女歌手" + "\'", conn);
+            dsinger = new DataSet();
+            SingerAdapter.Fill(dsinger, "singer");
+            foreach (DataRow dr in dsinger.Tables["singer"].Rows)
+            {
+                listBox3.Items.Add(dr.Field<string>("singername"));
+            }
+        }
+        //组合
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //清空上一次搜索出歌曲的列表listBox1和listSongid
+            listBox3.Items.Clear();
+            listSongid.Clear();
+
+            SingerAdapter = new MySqlDataAdapter("select * from singer where singercategory= \'" + "组合" + "\'", conn);
+            dsinger = new DataSet();
+            SingerAdapter.Fill(dsinger, "singer");
+            foreach (DataRow dr in dsinger.Tables["singer"].Rows)
+            {
+                listBox3.Items.Add(dr.Field<string>("singername"));
+            }
+        }
+        //全部
+        private void button14_Click(object sender, EventArgs e)
+        {
+            //清空上一次搜索出歌曲的列表listBox1和listSongid
+            listBox3.Items.Clear();
+            listSongid.Clear();
+
+            SingerAdapter = new MySqlDataAdapter("select * from singer ", conn);
+            dsinger = new DataSet();
+            SingerAdapter.Fill(dsinger, "singer");
+            foreach (DataRow dr in dsinger.Tables["singer"].Rows)
+            {
+                listBox3.Items.Add(dr.Field<string>("singername"));
+            }
+        }
+        //////////////////////////搜索歌手////////////////////////////////////////////////
+
+        //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
         //播放
         private void play_Click(object sender, EventArgs e)
         {
@@ -344,193 +604,23 @@ namespace KTV
         {
             textBox3.Text = "";
         }
-
+        
         //<-删除一个字母
         private void button6_Click(object sender, EventArgs e)
         {
             string pinyintext = textBox3.Text;
-            pinyintext = pinyintext.Substring(0, pinyintext.Length - 1);
+            if (pinyintext.Length > 0) pinyintext = pinyintext.Substring(0, pinyintext.Length - 1);
+            else MessageBox.Show("已经没有字母了！");
             textBox3.Text = pinyintext;
         }
 
-        //X
-        private void button22_Click(Object sender, EventArgs e)
+        
+        private void pinyinButtons_Click(object sender, EventArgs e)
         {
-            textBox3.AppendText("X");
-        }
-        private void button78_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("A");
-        }
-
-        private void button77_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("B");
-        }
-
-        private void button76_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("C");
-        }
-
-        private void button75_Click_1(object sender, EventArgs e)
-        {
-            textBox3.AppendText("D");
-        }
-
-        private void button74_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("E");
-        }
-
-        private void button73_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("F");
-        }
-
-        private void button72_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("G");
-        }
-
-        private void button71_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("H");
-        }
-
-        private void button70_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("I");
-        }
-
-        private void button69_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("J");
-        }
-
-        private void button68_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("K");
-        }
-
-        private void button67_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("L");
-        }
-
-        private void button66_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("M");
-        }
-
-        private void button65_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("N");
-        }
-
-        private void button64_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("O");
-        }
-
-        private void button63_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("P");
-        }
-
-        private void button62_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("Q");
-        }
-
-        private void button61_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("R");
-        }
-
-        private void button60_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("S");
-        }
-
-        private void button59_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("T");
-        }
-
-        private void button58_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("U");
-        }
-
-        private void button57_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("V");
-        }
-
-        private void button51_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("W");
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("Y");
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("Z");
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("0");
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("1");
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("2");
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("3");
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("4");
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("5");
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("6");
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("7");
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("8");
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            textBox3.AppendText("9");
+            if (this.textBox3.Text == "请输入歌曲歌名的首字母") this.textBox3.Text = null;
+            this.textBox3.ForeColor = Color.Black;
+            Button button = (Button)sender;
+            textBox3.AppendText(button.Text);
         }
         //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
     }
