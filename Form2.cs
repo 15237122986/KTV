@@ -44,17 +44,6 @@ namespace KTV
             this.pinyinPanel.Visible = false;
             this.singerPanel1.Visible = false;
         }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
         //歌手点歌
         private void ChooseSinger_Click(object sender, EventArgs e)
         {
@@ -604,7 +593,6 @@ namespace KTV
         {
             textBox3.Text = "";
         }
-        
         //<-删除一个字母
         private void button6_Click(object sender, EventArgs e)
         {

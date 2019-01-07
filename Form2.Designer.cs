@@ -43,6 +43,7 @@
             this.ReSing = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.Button();
             this.publicpanel2 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.topButton = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -145,10 +146,9 @@
             // 
             // ChooseSongName
             // 
-            this.ChooseSongName.Location = new System.Drawing.Point(428, 12);
-            this.ChooseSongName.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseSongName.Location = new System.Drawing.Point(285, 8);
             this.ChooseSongName.Name = "ChooseSongName";
-            this.ChooseSongName.Size = new System.Drawing.Size(114, 166);
+            this.ChooseSongName.Size = new System.Drawing.Size(76, 111);
             this.ChooseSongName.TabIndex = 11;
             this.ChooseSongName.Text = "歌名点歌";
             this.ChooseSongName.UseVisualStyleBackColor = true;
@@ -156,33 +156,34 @@
             // 
             // ChooseCategory
             // 
-            this.ChooseCategory.Location = new System.Drawing.Point(16, 12);
-            this.ChooseCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ChooseCategory.FlatAppearance.BorderSize = 0;
+            this.ChooseCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseCategory.Location = new System.Drawing.Point(11, 8);
             this.ChooseCategory.Name = "ChooseCategory";
-            this.ChooseCategory.Size = new System.Drawing.Size(114, 166);
+            this.ChooseCategory.Size = new System.Drawing.Size(76, 111);
             this.ChooseCategory.TabIndex = 8;
             this.ChooseCategory.Text = "类型点歌";
-            this.ChooseCategory.UseVisualStyleBackColor = true;
+            this.ChooseCategory.UseVisualStyleBackColor = false;
             this.ChooseCategory.Click += new System.EventHandler(this.ChooseCategory_Click);
             // 
             // ChoosePingyin
             // 
-            this.ChoosePingyin.Location = new System.Drawing.Point(154, 12);
-            this.ChoosePingyin.Margin = new System.Windows.Forms.Padding(4);
+            this.ChoosePingyin.BackColor = System.Drawing.Color.Transparent;
+            this.ChoosePingyin.Location = new System.Drawing.Point(108, 8);
             this.ChoosePingyin.Name = "ChoosePingyin";
-            this.ChoosePingyin.Size = new System.Drawing.Size(120, 166);
+            this.ChoosePingyin.Size = new System.Drawing.Size(75, 111);
             this.ChoosePingyin.TabIndex = 9;
             this.ChoosePingyin.Text = "拼音点歌";
-            this.ChoosePingyin.UseVisualStyleBackColor = true;
+            this.ChoosePingyin.UseVisualStyleBackColor = false;
             this.ChoosePingyin.Click += new System.EventHandler(this.ChoosePingyin_Click);
             // 
             // ChooseSinger
             // 
             this.ChooseSinger.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ChooseSinger.Location = new System.Drawing.Point(302, 12);
-            this.ChooseSinger.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseSinger.Location = new System.Drawing.Point(201, 8);
             this.ChooseSinger.Name = "ChooseSinger";
-            this.ChooseSinger.Size = new System.Drawing.Size(110, 166);
+            this.ChooseSinger.Size = new System.Drawing.Size(73, 111);
             this.ChooseSinger.TabIndex = 10;
             this.ChooseSinger.Text = "歌手点歌";
             this.ChooseSinger.UseVisualStyleBackColor = true;
@@ -194,9 +195,10 @@
             this.panel1.Controls.Add(this.ChooseSongName);
             this.panel1.Controls.Add(this.ChooseSinger);
             this.panel1.Controls.Add(this.ChooseCategory);
-            this.panel1.Location = new System.Drawing.Point(21, 104);
+            this.panel1.Location = new System.Drawing.Point(189, 163);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 195);
+            this.panel1.Size = new System.Drawing.Size(387, 130);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -209,16 +211,16 @@
             this.publicPanel1.Controls.Add(this.NextSong);
             this.publicPanel1.Controls.Add(this.ReSing);
             this.publicPanel1.Controls.Add(this.Home);
-            this.publicPanel1.Location = new System.Drawing.Point(10, 775);
-            this.publicPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.publicPanel1.Location = new System.Drawing.Point(-2, 484);
             this.publicPanel1.Name = "publicPanel1";
-            this.publicPanel1.Size = new System.Drawing.Size(1204, 122);
+            this.publicPanel1.Size = new System.Drawing.Size(791, 81);
             this.publicPanel1.TabIndex = 13;
             // 
             // MediaPlayer1
             // 
             this.MediaPlayer1.Enabled = true;
             this.MediaPlayer1.Location = new System.Drawing.Point(439, 27);
+            this.MediaPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.MediaPlayer1.Name = "MediaPlayer1";
             this.MediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MediaPlayer1.OcxState")));
             this.MediaPlayer1.Size = new System.Drawing.Size(277, 73);
@@ -226,20 +228,18 @@
             // 
             // Vounmn
             // 
-            this.Vounmn.Location = new System.Drawing.Point(851, 27);
-            this.Vounmn.Margin = new System.Windows.Forms.Padding(4);
+            this.Vounmn.Location = new System.Drawing.Point(567, 18);
             this.Vounmn.Name = "Vounmn";
-            this.Vounmn.Size = new System.Drawing.Size(99, 84);
+            this.Vounmn.Size = new System.Drawing.Size(66, 56);
             this.Vounmn.TabIndex = 5;
             this.Vounmn.Text = "音量";
             this.Vounmn.UseVisualStyleBackColor = true;
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(1075, 27);
-            this.playButton.Margin = new System.Windows.Forms.Padding(4);
+            this.playButton.Location = new System.Drawing.Point(717, 18);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(99, 84);
+            this.playButton.Size = new System.Drawing.Size(66, 56);
             this.playButton.TabIndex = 4;
             this.playButton.Text = "播放";
             this.playButton.UseVisualStyleBackColor = true;
@@ -247,20 +247,18 @@
             // 
             // SeeSong
             // 
-            this.SeeSong.Location = new System.Drawing.Point(952, 27);
-            this.SeeSong.Margin = new System.Windows.Forms.Padding(4);
+            this.SeeSong.Location = new System.Drawing.Point(635, 18);
             this.SeeSong.Name = "SeeSong";
-            this.SeeSong.Size = new System.Drawing.Size(99, 84);
+            this.SeeSong.Size = new System.Drawing.Size(66, 56);
             this.SeeSong.TabIndex = 3;
             this.SeeSong.Text = "已点";
             this.SeeSong.UseVisualStyleBackColor = true;
             // 
             // NextSong
             // 
-            this.NextSong.Location = new System.Drawing.Point(237, 27);
-            this.NextSong.Margin = new System.Windows.Forms.Padding(4);
+            this.NextSong.Location = new System.Drawing.Point(158, 18);
             this.NextSong.Name = "NextSong";
-            this.NextSong.Size = new System.Drawing.Size(99, 84);
+            this.NextSong.Size = new System.Drawing.Size(66, 56);
             this.NextSong.TabIndex = 2;
             this.NextSong.Text = "切歌";
             this.NextSong.UseVisualStyleBackColor = true;
@@ -268,10 +266,9 @@
             // 
             // ReSing
             // 
-            this.ReSing.Location = new System.Drawing.Point(130, 27);
-            this.ReSing.Margin = new System.Windows.Forms.Padding(4);
+            this.ReSing.Location = new System.Drawing.Point(87, 18);
             this.ReSing.Name = "ReSing";
-            this.ReSing.Size = new System.Drawing.Size(99, 84);
+            this.ReSing.Size = new System.Drawing.Size(66, 56);
             this.ReSing.TabIndex = 1;
             this.ReSing.Text = "重唱";
             this.ReSing.UseVisualStyleBackColor = true;
@@ -279,10 +276,9 @@
             // 
             // Home
             // 
-            this.Home.Location = new System.Drawing.Point(23, 27);
-            this.Home.Margin = new System.Windows.Forms.Padding(4);
+            this.Home.Location = new System.Drawing.Point(15, 18);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(99, 84);
+            this.Home.Size = new System.Drawing.Size(66, 56);
             this.Home.TabIndex = 0;
             this.Home.Text = "主界面";
             this.Home.UseVisualStyleBackColor = true;
@@ -290,23 +286,37 @@
             // 
             // publicpanel2
             // 
+            this.publicpanel2.BackColor = System.Drawing.Color.Transparent;
+            this.publicpanel2.Controls.Add(this.textBox2);
             this.publicpanel2.Controls.Add(this.deleteButton);
             this.publicpanel2.Controls.Add(this.topButton);
             this.publicpanel2.Controls.Add(this.listBox2);
             this.publicpanel2.Controls.Add(this.label1);
             this.publicpanel2.Controls.Add(this.textBox1);
-            this.publicpanel2.Location = new System.Drawing.Point(10, 2);
-            this.publicpanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.publicpanel2.Location = new System.Drawing.Point(-2, 1);
             this.publicpanel2.Name = "publicpanel2";
-            this.publicpanel2.Size = new System.Drawing.Size(1236, 95);
+            this.publicpanel2.Size = new System.Drawing.Size(783, 63);
             this.publicpanel2.TabIndex = 14;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(118, 21);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(168, 24);
+            this.textBox2.TabIndex = 17;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(891, 34);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.deleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.deleteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deleteButton.Location = new System.Drawing.Point(723, 31);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(86, 34);
+            this.deleteButton.Size = new System.Drawing.Size(57, 23);
             this.deleteButton.TabIndex = 16;
             this.deleteButton.Text = "删除";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -314,10 +324,15 @@
             // 
             // topButton
             // 
-            this.topButton.Location = new System.Drawing.Point(891, 0);
-            this.topButton.Margin = new System.Windows.Forms.Padding(4);
+            this.topButton.FlatAppearance.BorderSize = 0;
+            this.topButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.topButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.topButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.topButton.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.topButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.topButton.Location = new System.Drawing.Point(723, 3);
             this.topButton.Name = "topButton";
-            this.topButton.Size = new System.Drawing.Size(80, 34);
+            this.topButton.Size = new System.Drawing.Size(53, 23);
             this.topButton.TabIndex = 15;
             this.topButton.Text = "顶歌";
             this.topButton.UseVisualStyleBackColor = true;
@@ -326,70 +341,69 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(984, -4);
+            this.listBox2.ItemHeight = 12;
+            this.listBox2.Location = new System.Drawing.Point(511, 2);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(236, 58);
+            this.listBox2.Size = new System.Drawing.Size(210, 52);
             this.listBox2.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(147, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "正在播放：";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 9);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(154, -27);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 28);
+            this.textBox1.Size = new System.Drawing.Size(172, 21);
             this.textBox1.TabIndex = 12;
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.listBox1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(613, 181);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(110, 107);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(495, 294);
+            this.panel3.Size = new System.Drawing.Size(542, 378);
             this.panel3.TabIndex = 76;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Location = new System.Drawing.Point(210, 22);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(140, 15);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(270, 256);
+            this.listBox1.Size = new System.Drawing.Size(384, 352);
             this.listBox1.TabIndex = 14;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 240);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(43, 228);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.Size = new System.Drawing.Size(48, 16);
             this.label4.TabIndex = 56;
             this.label4.Text = "label4";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 42);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 94);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 194);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 129);
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
             // 
@@ -398,38 +412,35 @@
             this.songNamePanel.Controls.Add(this.songNameTextBox);
             this.songNamePanel.Controls.Add(this.songNameListBox);
             this.songNamePanel.Controls.Add(this.songNameSearchButton);
-            this.songNamePanel.Location = new System.Drawing.Point(670, 108);
+            this.songNamePanel.Location = new System.Drawing.Point(20, 81);
+            this.songNamePanel.Margin = new System.Windows.Forms.Padding(2);
             this.songNamePanel.Name = "songNamePanel";
-            this.songNamePanel.Size = new System.Drawing.Size(366, 342);
+            this.songNamePanel.Size = new System.Drawing.Size(244, 228);
             this.songNamePanel.TabIndex = 74;
-            this.songNamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.songNamePanel_Paint);
             // 
             // songNameTextBox
             // 
             this.songNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.songNameTextBox.Location = new System.Drawing.Point(46, 21);
-            this.songNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.songNameTextBox.Location = new System.Drawing.Point(31, 14);
             this.songNameTextBox.Name = "songNameTextBox";
-            this.songNameTextBox.Size = new System.Drawing.Size(170, 28);
+            this.songNameTextBox.Size = new System.Drawing.Size(115, 21);
             this.songNameTextBox.TabIndex = 47;
             // 
             // songNameListBox
             // 
             this.songNameListBox.FormattingEnabled = true;
-            this.songNameListBox.ItemHeight = 18;
-            this.songNameListBox.Location = new System.Drawing.Point(22, 62);
-            this.songNameListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.songNameListBox.ItemHeight = 12;
+            this.songNameListBox.Location = new System.Drawing.Point(15, 41);
             this.songNameListBox.Name = "songNameListBox";
-            this.songNameListBox.Size = new System.Drawing.Size(283, 238);
+            this.songNameListBox.Size = new System.Drawing.Size(190, 160);
             this.songNameListBox.TabIndex = 46;
             this.songNameListBox.SelectedIndexChanged += new System.EventHandler(this.songNameListBox_SelectedIndexChanged);
             // 
             // songNameSearchButton
             // 
-            this.songNameSearchButton.Location = new System.Drawing.Point(228, 18);
-            this.songNameSearchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.songNameSearchButton.Location = new System.Drawing.Point(152, 12);
             this.songNameSearchButton.Name = "songNameSearchButton";
-            this.songNameSearchButton.Size = new System.Drawing.Size(80, 34);
+            this.songNameSearchButton.Size = new System.Drawing.Size(53, 23);
             this.songNameSearchButton.TabIndex = 49;
             this.songNameSearchButton.Text = "搜索";
             this.songNameSearchButton.UseVisualStyleBackColor = true;
@@ -437,6 +448,7 @@
             // 
             // singerPanel1
             // 
+            this.singerPanel1.BackColor = System.Drawing.Color.Transparent;
             this.singerPanel1.Controls.Add(this.listBox3);
             this.singerPanel1.Controls.Add(this.button49);
             this.singerPanel1.Controls.Add(this.textBox13);
@@ -444,30 +456,32 @@
             this.singerPanel1.Controls.Add(this.button3);
             this.singerPanel1.Controls.Add(this.button2);
             this.singerPanel1.Controls.Add(this.button1);
-            this.singerPanel1.Location = new System.Drawing.Point(18, 314);
-            this.singerPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.singerPanel1.Location = new System.Drawing.Point(156, 72);
             this.singerPanel1.Name = "singerPanel1";
-            this.singerPanel1.Size = new System.Drawing.Size(407, 417);
+            this.singerPanel1.Size = new System.Drawing.Size(478, 406);
             this.singerPanel1.TabIndex = 75;
-            this.singerPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.singerPanel1_Paint);
             // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 18;
-            this.listBox3.Location = new System.Drawing.Point(24, 144);
-            this.listBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox3.ItemHeight = 12;
+            this.listBox3.Location = new System.Drawing.Point(16, 96);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(324, 238);
+            this.listBox3.Size = new System.Drawing.Size(443, 292);
             this.listBox3.TabIndex = 75;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
             // button49
             // 
-            this.button49.Location = new System.Drawing.Point(274, 12);
-            this.button49.Margin = new System.Windows.Forms.Padding(4);
+            this.button49.FlatAppearance.BorderSize = 0;
+            this.button49.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button49.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button49.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button49.Font = new System.Drawing.Font("华文隶书", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button49.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button49.Location = new System.Drawing.Point(338, 31);
             this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(102, 45);
+            this.button49.Size = new System.Drawing.Size(68, 30);
             this.button49.TabIndex = 74;
             this.button49.Text = "搜索";
             this.button49.UseVisualStyleBackColor = true;
@@ -475,19 +489,23 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(24, 12);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox13.Location = new System.Drawing.Point(33, 31);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(229, 43);
+            this.textBox13.Size = new System.Drawing.Size(310, 30);
             this.textBox13.TabIndex = 72;
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(216, 108);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button14.Location = new System.Drawing.Point(384, 67);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(112, 34);
+            this.button14.Size = new System.Drawing.Size(86, 23);
             this.button14.TabIndex = 45;
             this.button14.Text = "全部";
             this.button14.UseVisualStyleBackColor = true;
@@ -495,10 +513,15 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(50, 105);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(281, 67);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 34);
+            this.button3.Size = new System.Drawing.Size(86, 23);
             this.button3.TabIndex = 40;
             this.button3.Text = "组合";
             this.button3.UseVisualStyleBackColor = true;
@@ -506,10 +529,15 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(216, 63);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(163, 67);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 34);
+            this.button2.Size = new System.Drawing.Size(86, 23);
             this.button2.TabIndex = 39;
             this.button2.Text = "女歌手";
             this.button2.UseVisualStyleBackColor = true;
@@ -517,33 +545,39 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 63);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(22, 67);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.Size = new System.Drawing.Size(86, 23);
             this.button1.TabIndex = 38;
             this.button1.Text = "男歌手";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pinyinPanel
             // 
+            this.pinyinPanel.BackColor = System.Drawing.Color.Transparent;
             this.pinyinPanel.Controls.Add(this.listBox4);
             this.pinyinPanel.Controls.Add(this.panel6);
-            this.pinyinPanel.Location = new System.Drawing.Point(494, 314);
-            this.pinyinPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.pinyinPanel.Location = new System.Drawing.Point(110, 123);
             this.pinyinPanel.Name = "pinyinPanel";
-            this.pinyinPanel.Size = new System.Drawing.Size(640, 424);
+            this.pinyinPanel.Size = new System.Drawing.Size(600, 297);
             this.pinyinPanel.TabIndex = 77;
             // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 18;
-            this.listBox4.Location = new System.Drawing.Point(478, 22);
-            this.listBox4.Margin = new System.Windows.Forms.Padding(6);
+            this.listBox4.ItemHeight = 12;
+            this.listBox4.Location = new System.Drawing.Point(317, 15);
+            this.listBox4.Margin = new System.Windows.Forms.Padding(4);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(148, 382);
+            this.listBox4.Size = new System.Drawing.Size(272, 268);
             this.listBox4.TabIndex = 43;
             this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
@@ -552,18 +586,24 @@
             this.panel6.Controls.Add(this.button5);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Location = new System.Drawing.Point(10, 22);
-            this.panel6.Margin = new System.Windows.Forms.Padding(6);
+            this.panel6.Location = new System.Drawing.Point(7, 15);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(456, 394);
+            this.panel6.Size = new System.Drawing.Size(303, 268);
             this.panel6.TabIndex = 41;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(248, 6);
-            this.button5.Margin = new System.Windows.Forms.Padding(6);
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("华文隶书", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(219, 14);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 40);
+            this.button5.Size = new System.Drawing.Size(65, 27);
             this.button5.TabIndex = 40;
             this.button5.Text = "搜索";
             this.button5.UseVisualStyleBackColor = true;
@@ -609,18 +649,24 @@
             this.panel7.Controls.Add(this.button76);
             this.panel7.Controls.Add(this.button77);
             this.panel7.Controls.Add(this.button78);
-            this.panel7.Location = new System.Drawing.Point(6, 58);
-            this.panel7.Margin = new System.Windows.Forms.Padding(6);
+            this.panel7.Location = new System.Drawing.Point(4, 53);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(440, 327);
+            this.panel7.Size = new System.Drawing.Size(285, 200);
             this.panel7.TabIndex = 39;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(255, 260);
-            this.button6.Margin = new System.Windows.Forms.Padding(6);
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("华文隶书", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.Location = new System.Drawing.Point(145, 164);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 34);
+            this.button6.Size = new System.Drawing.Size(65, 30);
             this.button6.TabIndex = 38;
             this.button6.Text = "<-";
             this.button6.UseVisualStyleBackColor = true;
@@ -628,10 +674,16 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(338, 255);
-            this.button7.Margin = new System.Windows.Forms.Padding(6);
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("华文隶书", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button7.Location = new System.Drawing.Point(215, 164);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(78, 46);
+            this.button7.Size = new System.Drawing.Size(65, 30);
             this.button7.TabIndex = 36;
             this.button7.Text = "清空";
             this.button7.UseVisualStyleBackColor = true;
@@ -639,10 +691,16 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(142, 255);
-            this.button8.Margin = new System.Windows.Forms.Padding(6);
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button8.Location = new System.Drawing.Point(110, 164);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 46);
+            this.button8.Size = new System.Drawing.Size(30, 30);
             this.button8.TabIndex = 35;
             this.button8.Text = "9";
             this.button8.UseVisualStyleBackColor = true;
@@ -650,10 +708,16 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(105, 255);
-            this.button9.Margin = new System.Windows.Forms.Padding(6);
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button9.Location = new System.Drawing.Point(75, 164);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(30, 46);
+            this.button9.Size = new System.Drawing.Size(30, 30);
             this.button9.TabIndex = 34;
             this.button9.Text = "8";
             this.button9.UseVisualStyleBackColor = true;
@@ -661,10 +725,16 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(46, 255);
-            this.button10.Margin = new System.Windows.Forms.Padding(6);
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button10.Location = new System.Drawing.Point(40, 164);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(46, 46);
+            this.button10.Size = new System.Drawing.Size(30, 30);
             this.button10.TabIndex = 33;
             this.button10.Text = "7";
             this.button10.UseVisualStyleBackColor = true;
@@ -672,10 +742,16 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(6, 248);
-            this.button12.Margin = new System.Windows.Forms.Padding(6);
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button12.Location = new System.Drawing.Point(5, 164);
+            this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(39, 46);
+            this.button12.Size = new System.Drawing.Size(30, 30);
             this.button12.TabIndex = 32;
             this.button12.Text = "6";
             this.button12.UseVisualStyleBackColor = true;
@@ -683,10 +759,16 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(369, 192);
-            this.button13.Margin = new System.Windows.Forms.Padding(6);
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button13.Location = new System.Drawing.Point(250, 124);
+            this.button13.Margin = new System.Windows.Forms.Padding(4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(27, 44);
+            this.button13.Size = new System.Drawing.Size(30, 30);
             this.button13.TabIndex = 31;
             this.button13.Text = "5";
             this.button13.UseVisualStyleBackColor = true;
@@ -694,10 +776,16 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(312, 192);
-            this.button15.Margin = new System.Windows.Forms.Padding(6);
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button15.Location = new System.Drawing.Point(215, 124);
+            this.button15.Margin = new System.Windows.Forms.Padding(4);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(45, 44);
+            this.button15.Size = new System.Drawing.Size(30, 30);
             this.button15.TabIndex = 30;
             this.button15.Text = "4";
             this.button15.UseVisualStyleBackColor = true;
@@ -705,10 +793,16 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(255, 188);
-            this.button16.Margin = new System.Windows.Forms.Padding(6);
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button16.Location = new System.Drawing.Point(180, 124);
+            this.button16.Margin = new System.Windows.Forms.Padding(4);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(45, 48);
+            this.button16.Size = new System.Drawing.Size(30, 30);
             this.button16.TabIndex = 29;
             this.button16.Text = "3";
             this.button16.UseVisualStyleBackColor = true;
@@ -716,10 +810,16 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(216, 182);
-            this.button17.Margin = new System.Windows.Forms.Padding(6);
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button17.Location = new System.Drawing.Point(145, 124);
+            this.button17.Margin = new System.Windows.Forms.Padding(4);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(39, 57);
+            this.button17.Size = new System.Drawing.Size(30, 30);
             this.button17.TabIndex = 28;
             this.button17.Text = "2";
             this.button17.UseVisualStyleBackColor = true;
@@ -727,10 +827,16 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(176, 188);
-            this.button18.Margin = new System.Windows.Forms.Padding(6);
+            this.button18.FlatAppearance.BorderSize = 0;
+            this.button18.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button18.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button18.Location = new System.Drawing.Point(110, 124);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(34, 48);
+            this.button18.Size = new System.Drawing.Size(30, 30);
             this.button18.TabIndex = 27;
             this.button18.Text = "1";
             this.button18.UseVisualStyleBackColor = true;
@@ -738,10 +844,16 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(116, 186);
-            this.button19.Margin = new System.Windows.Forms.Padding(6);
+            this.button19.FlatAppearance.BorderSize = 0;
+            this.button19.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button19.Location = new System.Drawing.Point(75, 124);
+            this.button19.Margin = new System.Windows.Forms.Padding(4);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(48, 57);
+            this.button19.Size = new System.Drawing.Size(30, 30);
             this.button19.TabIndex = 26;
             this.button19.Text = "0";
             this.button19.UseVisualStyleBackColor = true;
@@ -749,10 +861,16 @@
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(57, 186);
-            this.button20.Margin = new System.Windows.Forms.Padding(6);
+            this.button20.FlatAppearance.BorderSize = 0;
+            this.button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button20.Location = new System.Drawing.Point(40, 124);
+            this.button20.Margin = new System.Windows.Forms.Padding(4);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(46, 57);
+            this.button20.Size = new System.Drawing.Size(30, 30);
             this.button20.TabIndex = 25;
             this.button20.Text = "Z";
             this.button20.UseVisualStyleBackColor = true;
@@ -760,10 +878,16 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(6, 186);
-            this.button21.Margin = new System.Windows.Forms.Padding(6);
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button21.Location = new System.Drawing.Point(5, 124);
+            this.button21.Margin = new System.Windows.Forms.Padding(4);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(39, 50);
+            this.button21.Size = new System.Drawing.Size(30, 30);
             this.button21.TabIndex = 24;
             this.button21.Text = "Y";
             this.button21.UseVisualStyleBackColor = true;
@@ -771,10 +895,16 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(372, 124);
-            this.button22.Margin = new System.Windows.Forms.Padding(6);
+            this.button22.FlatAppearance.BorderSize = 0;
+            this.button22.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button22.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button22.Location = new System.Drawing.Point(250, 82);
+            this.button22.Margin = new System.Windows.Forms.Padding(4);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(36, 51);
+            this.button22.Size = new System.Drawing.Size(30, 30);
             this.button22.TabIndex = 23;
             this.button22.Text = "X";
             this.button22.UseVisualStyleBackColor = true;
@@ -782,10 +912,16 @@
             // 
             // button51
             // 
-            this.button51.Location = new System.Drawing.Point(318, 124);
-            this.button51.Margin = new System.Windows.Forms.Padding(6);
+            this.button51.FlatAppearance.BorderSize = 0;
+            this.button51.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button51.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button51.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button51.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button51.Location = new System.Drawing.Point(215, 84);
+            this.button51.Margin = new System.Windows.Forms.Padding(4);
             this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(42, 51);
+            this.button51.Size = new System.Drawing.Size(30, 30);
             this.button51.TabIndex = 22;
             this.button51.Text = "W";
             this.button51.UseVisualStyleBackColor = true;
@@ -793,10 +929,16 @@
             // 
             // button57
             // 
-            this.button57.Location = new System.Drawing.Point(261, 123);
-            this.button57.Margin = new System.Windows.Forms.Padding(6);
+            this.button57.FlatAppearance.BorderSize = 0;
+            this.button57.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button57.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button57.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button57.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button57.Location = new System.Drawing.Point(180, 84);
+            this.button57.Margin = new System.Windows.Forms.Padding(4);
             this.button57.Name = "button57";
-            this.button57.Size = new System.Drawing.Size(45, 51);
+            this.button57.Size = new System.Drawing.Size(30, 30);
             this.button57.TabIndex = 21;
             this.button57.Text = "V";
             this.button57.UseVisualStyleBackColor = true;
@@ -804,10 +946,16 @@
             // 
             // button58
             // 
-            this.button58.Location = new System.Drawing.Point(219, 124);
-            this.button58.Margin = new System.Windows.Forms.Padding(6);
+            this.button58.FlatAppearance.BorderSize = 0;
+            this.button58.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button58.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button58.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button58.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button58.Location = new System.Drawing.Point(145, 84);
+            this.button58.Margin = new System.Windows.Forms.Padding(4);
             this.button58.Name = "button58";
-            this.button58.Size = new System.Drawing.Size(39, 51);
+            this.button58.Size = new System.Drawing.Size(30, 30);
             this.button58.TabIndex = 20;
             this.button58.Text = "U";
             this.button58.UseVisualStyleBackColor = true;
@@ -815,10 +963,16 @@
             // 
             // button59
             // 
-            this.button59.Location = new System.Drawing.Point(159, 123);
-            this.button59.Margin = new System.Windows.Forms.Padding(6);
+            this.button59.FlatAppearance.BorderSize = 0;
+            this.button59.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button59.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button59.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button59.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button59.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button59.Location = new System.Drawing.Point(110, 84);
+            this.button59.Margin = new System.Windows.Forms.Padding(4);
             this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(48, 51);
+            this.button59.Size = new System.Drawing.Size(30, 30);
             this.button59.TabIndex = 19;
             this.button59.Text = "T";
             this.button59.UseVisualStyleBackColor = true;
@@ -826,10 +980,16 @@
             // 
             // button60
             // 
-            this.button60.Location = new System.Drawing.Point(105, 123);
-            this.button60.Margin = new System.Windows.Forms.Padding(6);
+            this.button60.FlatAppearance.BorderSize = 0;
+            this.button60.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button60.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button60.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button60.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button60.Location = new System.Drawing.Point(75, 84);
+            this.button60.Margin = new System.Windows.Forms.Padding(4);
             this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(42, 51);
+            this.button60.Size = new System.Drawing.Size(30, 30);
             this.button60.TabIndex = 18;
             this.button60.Text = "S";
             this.button60.UseVisualStyleBackColor = true;
@@ -837,10 +997,16 @@
             // 
             // button61
             // 
-            this.button61.Location = new System.Drawing.Point(57, 123);
-            this.button61.Margin = new System.Windows.Forms.Padding(6);
+            this.button61.FlatAppearance.BorderSize = 0;
+            this.button61.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button61.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button61.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button61.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button61.Location = new System.Drawing.Point(40, 84);
+            this.button61.Margin = new System.Windows.Forms.Padding(4);
             this.button61.Name = "button61";
-            this.button61.Size = new System.Drawing.Size(36, 44);
+            this.button61.Size = new System.Drawing.Size(30, 30);
             this.button61.TabIndex = 17;
             this.button61.Text = "R";
             this.button61.UseVisualStyleBackColor = true;
@@ -848,10 +1014,16 @@
             // 
             // button62
             // 
-            this.button62.Location = new System.Drawing.Point(6, 123);
-            this.button62.Margin = new System.Windows.Forms.Padding(6);
+            this.button62.FlatAppearance.BorderSize = 0;
+            this.button62.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button62.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button62.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button62.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button62.Location = new System.Drawing.Point(5, 84);
+            this.button62.Margin = new System.Windows.Forms.Padding(4);
             this.button62.Name = "button62";
-            this.button62.Size = new System.Drawing.Size(39, 51);
+            this.button62.Size = new System.Drawing.Size(30, 30);
             this.button62.TabIndex = 16;
             this.button62.Text = "Q";
             this.button62.UseVisualStyleBackColor = true;
@@ -859,10 +1031,16 @@
             // 
             // button63
             // 
-            this.button63.Location = new System.Drawing.Point(399, 64);
-            this.button63.Margin = new System.Windows.Forms.Padding(6);
+            this.button63.FlatAppearance.BorderSize = 0;
+            this.button63.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button63.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button63.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button63.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button63.Location = new System.Drawing.Point(250, 44);
+            this.button63.Margin = new System.Windows.Forms.Padding(4);
             this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(34, 44);
+            this.button63.Size = new System.Drawing.Size(30, 30);
             this.button63.TabIndex = 15;
             this.button63.Text = "P";
             this.button63.UseVisualStyleBackColor = true;
@@ -870,10 +1048,16 @@
             // 
             // button64
             // 
-            this.button64.Location = new System.Drawing.Point(338, 68);
-            this.button64.Margin = new System.Windows.Forms.Padding(6);
+            this.button64.FlatAppearance.BorderSize = 0;
+            this.button64.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button64.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button64.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button64.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button64.Location = new System.Drawing.Point(215, 44);
+            this.button64.Margin = new System.Windows.Forms.Padding(4);
             this.button64.Name = "button64";
-            this.button64.Size = new System.Drawing.Size(50, 44);
+            this.button64.Size = new System.Drawing.Size(30, 30);
             this.button64.TabIndex = 14;
             this.button64.Text = "O";
             this.button64.UseVisualStyleBackColor = true;
@@ -881,10 +1065,16 @@
             // 
             // button65
             // 
-            this.button65.Location = new System.Drawing.Point(280, 64);
-            this.button65.Margin = new System.Windows.Forms.Padding(6);
+            this.button65.FlatAppearance.BorderSize = 0;
+            this.button65.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button65.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button65.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button65.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button65.Location = new System.Drawing.Point(180, 44);
+            this.button65.Margin = new System.Windows.Forms.Padding(4);
             this.button65.Name = "button65";
-            this.button65.Size = new System.Drawing.Size(45, 44);
+            this.button65.Size = new System.Drawing.Size(30, 30);
             this.button65.TabIndex = 13;
             this.button65.Text = "N";
             this.button65.UseVisualStyleBackColor = true;
@@ -892,10 +1082,16 @@
             // 
             // button66
             // 
-            this.button66.Location = new System.Drawing.Point(222, 69);
-            this.button66.Margin = new System.Windows.Forms.Padding(6);
+            this.button66.FlatAppearance.BorderSize = 0;
+            this.button66.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button66.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button66.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button66.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button66.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button66.Location = new System.Drawing.Point(145, 44);
+            this.button66.Margin = new System.Windows.Forms.Padding(4);
             this.button66.Name = "button66";
-            this.button66.Size = new System.Drawing.Size(48, 44);
+            this.button66.Size = new System.Drawing.Size(30, 30);
             this.button66.TabIndex = 12;
             this.button66.Text = "M";
             this.button66.UseVisualStyleBackColor = true;
@@ -903,10 +1099,16 @@
             // 
             // button67
             // 
-            this.button67.Location = new System.Drawing.Point(162, 68);
-            this.button67.Margin = new System.Windows.Forms.Padding(6);
+            this.button67.FlatAppearance.BorderSize = 0;
+            this.button67.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button67.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button67.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button67.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button67.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button67.Location = new System.Drawing.Point(110, 44);
+            this.button67.Margin = new System.Windows.Forms.Padding(4);
             this.button67.Name = "button67";
-            this.button67.Size = new System.Drawing.Size(48, 44);
+            this.button67.Size = new System.Drawing.Size(30, 30);
             this.button67.TabIndex = 11;
             this.button67.Text = "L";
             this.button67.UseVisualStyleBackColor = true;
@@ -914,10 +1116,16 @@
             // 
             // button68
             // 
-            this.button68.Location = new System.Drawing.Point(100, 68);
-            this.button68.Margin = new System.Windows.Forms.Padding(6);
+            this.button68.FlatAppearance.BorderSize = 0;
+            this.button68.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button68.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button68.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button68.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button68.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button68.Location = new System.Drawing.Point(75, 44);
+            this.button68.Margin = new System.Windows.Forms.Padding(4);
             this.button68.Name = "button68";
-            this.button68.Size = new System.Drawing.Size(54, 44);
+            this.button68.Size = new System.Drawing.Size(30, 30);
             this.button68.TabIndex = 10;
             this.button68.Text = "K";
             this.button68.UseVisualStyleBackColor = true;
@@ -925,10 +1133,16 @@
             // 
             // button69
             // 
-            this.button69.Location = new System.Drawing.Point(46, 68);
-            this.button69.Margin = new System.Windows.Forms.Padding(6);
+            this.button69.FlatAppearance.BorderSize = 0;
+            this.button69.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button69.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button69.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button69.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button69.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button69.Location = new System.Drawing.Point(40, 44);
+            this.button69.Margin = new System.Windows.Forms.Padding(4);
             this.button69.Name = "button69";
-            this.button69.Size = new System.Drawing.Size(46, 44);
+            this.button69.Size = new System.Drawing.Size(30, 30);
             this.button69.TabIndex = 9;
             this.button69.Text = "J";
             this.button69.UseVisualStyleBackColor = true;
@@ -936,10 +1150,16 @@
             // 
             // button70
             // 
-            this.button70.Location = new System.Drawing.Point(6, 68);
-            this.button70.Margin = new System.Windows.Forms.Padding(6);
+            this.button70.FlatAppearance.BorderSize = 0;
+            this.button70.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button70.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button70.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button70.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button70.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button70.Location = new System.Drawing.Point(5, 44);
+            this.button70.Margin = new System.Windows.Forms.Padding(4);
             this.button70.Name = "button70";
-            this.button70.Size = new System.Drawing.Size(39, 44);
+            this.button70.Size = new System.Drawing.Size(30, 30);
             this.button70.TabIndex = 8;
             this.button70.Text = "I";
             this.button70.UseVisualStyleBackColor = true;
@@ -947,10 +1167,16 @@
             // 
             // button71
             // 
-            this.button71.Location = new System.Drawing.Point(392, 6);
-            this.button71.Margin = new System.Windows.Forms.Padding(6);
+            this.button71.FlatAppearance.BorderSize = 0;
+            this.button71.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button71.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button71.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button71.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button71.Location = new System.Drawing.Point(250, 4);
+            this.button71.Margin = new System.Windows.Forms.Padding(4);
             this.button71.Name = "button71";
-            this.button71.Size = new System.Drawing.Size(48, 50);
+            this.button71.Size = new System.Drawing.Size(30, 30);
             this.button71.TabIndex = 7;
             this.button71.Text = "H";
             this.button71.UseVisualStyleBackColor = true;
@@ -958,10 +1184,16 @@
             // 
             // button72
             // 
-            this.button72.Location = new System.Drawing.Point(342, 3);
-            this.button72.Margin = new System.Windows.Forms.Padding(6);
+            this.button72.FlatAppearance.BorderSize = 0;
+            this.button72.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button72.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button72.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button72.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button72.Location = new System.Drawing.Point(215, 4);
+            this.button72.Margin = new System.Windows.Forms.Padding(4);
             this.button72.Name = "button72";
-            this.button72.Size = new System.Drawing.Size(50, 50);
+            this.button72.Size = new System.Drawing.Size(30, 30);
             this.button72.TabIndex = 6;
             this.button72.Text = "G";
             this.button72.UseVisualStyleBackColor = true;
@@ -969,10 +1201,16 @@
             // 
             // button73
             // 
-            this.button73.Location = new System.Drawing.Point(291, 3);
-            this.button73.Margin = new System.Windows.Forms.Padding(6);
+            this.button73.FlatAppearance.BorderSize = 0;
+            this.button73.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button73.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button73.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button73.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button73.Location = new System.Drawing.Point(180, 4);
+            this.button73.Margin = new System.Windows.Forms.Padding(4);
             this.button73.Name = "button73";
-            this.button73.Size = new System.Drawing.Size(45, 50);
+            this.button73.Size = new System.Drawing.Size(30, 30);
             this.button73.TabIndex = 5;
             this.button73.Text = "F";
             this.button73.UseVisualStyleBackColor = true;
@@ -980,10 +1218,16 @@
             // 
             // button74
             // 
-            this.button74.Location = new System.Drawing.Point(228, 3);
-            this.button74.Margin = new System.Windows.Forms.Padding(6);
+            this.button74.FlatAppearance.BorderSize = 0;
+            this.button74.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button74.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button74.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button74.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button74.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button74.Location = new System.Drawing.Point(145, 4);
+            this.button74.Margin = new System.Windows.Forms.Padding(4);
             this.button74.Name = "button74";
-            this.button74.Size = new System.Drawing.Size(50, 50);
+            this.button74.Size = new System.Drawing.Size(30, 30);
             this.button74.TabIndex = 4;
             this.button74.Text = "E";
             this.button74.UseVisualStyleBackColor = true;
@@ -991,10 +1235,16 @@
             // 
             // button75
             // 
-            this.button75.Location = new System.Drawing.Point(162, 6);
-            this.button75.Margin = new System.Windows.Forms.Padding(6);
+            this.button75.FlatAppearance.BorderSize = 0;
+            this.button75.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button75.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button75.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button75.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button75.Location = new System.Drawing.Point(110, 4);
+            this.button75.Margin = new System.Windows.Forms.Padding(4);
             this.button75.Name = "button75";
-            this.button75.Size = new System.Drawing.Size(54, 50);
+            this.button75.Size = new System.Drawing.Size(30, 30);
             this.button75.TabIndex = 3;
             this.button75.Text = "D";
             this.button75.UseVisualStyleBackColor = true;
@@ -1002,10 +1252,16 @@
             // 
             // button76
             // 
-            this.button76.Location = new System.Drawing.Point(99, 6);
-            this.button76.Margin = new System.Windows.Forms.Padding(6);
+            this.button76.FlatAppearance.BorderSize = 0;
+            this.button76.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button76.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button76.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button76.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button76.Location = new System.Drawing.Point(75, 4);
+            this.button76.Margin = new System.Windows.Forms.Padding(4);
             this.button76.Name = "button76";
-            this.button76.Size = new System.Drawing.Size(51, 50);
+            this.button76.Size = new System.Drawing.Size(30, 30);
             this.button76.TabIndex = 2;
             this.button76.Text = "C";
             this.button76.UseVisualStyleBackColor = true;
@@ -1013,33 +1269,48 @@
             // 
             // button77
             // 
-            this.button77.Location = new System.Drawing.Point(46, 6);
-            this.button77.Margin = new System.Windows.Forms.Padding(6);
+            this.button77.BackColor = System.Drawing.Color.Transparent;
+            this.button77.FlatAppearance.BorderSize = 0;
+            this.button77.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button77.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button77.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button77.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button77.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button77.Location = new System.Drawing.Point(40, 4);
+            this.button77.Margin = new System.Windows.Forms.Padding(4);
             this.button77.Name = "button77";
-            this.button77.Size = new System.Drawing.Size(45, 50);
+            this.button77.Size = new System.Drawing.Size(30, 30);
             this.button77.TabIndex = 1;
             this.button77.Text = "B";
-            this.button77.UseVisualStyleBackColor = true;
+            this.button77.UseVisualStyleBackColor = false;
             this.button77.Click += new System.EventHandler(this.pinyinButtons_Click);
             // 
             // button78
             // 
-            this.button78.Location = new System.Drawing.Point(6, 6);
-            this.button78.Margin = new System.Windows.Forms.Padding(6);
+            this.button78.BackColor = System.Drawing.Color.Transparent;
+            this.button78.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button78.FlatAppearance.BorderSize = 0;
+            this.button78.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button78.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button78.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button78.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button78.ForeColor = System.Drawing.Color.White;
+            this.button78.Location = new System.Drawing.Point(5, 4);
+            this.button78.Margin = new System.Windows.Forms.Padding(4);
             this.button78.Name = "button78";
-            this.button78.Size = new System.Drawing.Size(39, 50);
+            this.button78.Size = new System.Drawing.Size(30, 30);
             this.button78.TabIndex = 0;
             this.button78.Text = "A";
-            this.button78.UseVisualStyleBackColor = true;
+            this.button78.UseVisualStyleBackColor = false;
             this.button78.Click += new System.EventHandler(this.pinyinButtons_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 14);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
+            this.textBox3.Location = new System.Drawing.Point(9, 17);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 31);
+            this.textBox3.Size = new System.Drawing.Size(202, 22);
             this.textBox3.TabIndex = 38;
             // 
             // panel2
@@ -1064,19 +1335,17 @@
             this.panel2.Controls.Add(this.经典);
             this.panel2.Controls.Add(this.翻唱);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(33, 561);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(22, 374);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1060, 166);
+            this.panel2.Size = new System.Drawing.Size(707, 111);
             this.panel2.TabIndex = 77;
             // 
             // 日语
             // 
             this.日语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.日语.Location = new System.Drawing.Point(806, 104);
-            this.日语.Margin = new System.Windows.Forms.Padding(4);
+            this.日语.Location = new System.Drawing.Point(537, 69);
             this.日语.Name = "日语";
-            this.日语.Size = new System.Drawing.Size(112, 34);
+            this.日语.Size = new System.Drawing.Size(75, 23);
             this.日语.TabIndex = 68;
             this.日语.Text = "日语";
             this.日语.UseVisualStyleBackColor = true;
@@ -1085,10 +1354,9 @@
             // 欧美
             // 
             this.欧美.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.欧美.Location = new System.Drawing.Point(927, 104);
-            this.欧美.Margin = new System.Windows.Forms.Padding(4);
+            this.欧美.Location = new System.Drawing.Point(618, 69);
             this.欧美.Name = "欧美";
-            this.欧美.Size = new System.Drawing.Size(112, 34);
+            this.欧美.Size = new System.Drawing.Size(75, 23);
             this.欧美.TabIndex = 67;
             this.欧美.Text = "欧美";
             this.欧美.UseVisualStyleBackColor = true;
@@ -1097,10 +1365,9 @@
             // 粤语
             // 
             this.粤语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.粤语.Location = new System.Drawing.Point(927, 60);
-            this.粤语.Margin = new System.Windows.Forms.Padding(4);
+            this.粤语.Location = new System.Drawing.Point(618, 40);
             this.粤语.Name = "粤语";
-            this.粤语.Size = new System.Drawing.Size(112, 34);
+            this.粤语.Size = new System.Drawing.Size(75, 23);
             this.粤语.TabIndex = 65;
             this.粤语.Text = "粤语";
             this.粤语.UseVisualStyleBackColor = true;
@@ -1109,10 +1376,9 @@
             // 华语
             // 
             this.华语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.华语.Location = new System.Drawing.Point(806, 60);
-            this.华语.Margin = new System.Windows.Forms.Padding(4);
+            this.华语.Location = new System.Drawing.Point(537, 40);
             this.华语.Name = "华语";
-            this.华语.Size = new System.Drawing.Size(112, 34);
+            this.华语.Size = new System.Drawing.Size(75, 23);
             this.华语.TabIndex = 64;
             this.华语.Text = "华语";
             this.华语.UseVisualStyleBackColor = true;
@@ -1122,20 +1388,18 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(878, 16);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(585, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 33);
+            this.label6.Size = new System.Drawing.Size(56, 21);
             this.label6.TabIndex = 63;
             this.label6.Text = "语言";
             // 
             // 民谣
             // 
             this.民谣.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.民谣.Location = new System.Drawing.Point(666, 104);
-            this.民谣.Margin = new System.Windows.Forms.Padding(4);
+            this.民谣.Location = new System.Drawing.Point(444, 69);
             this.民谣.Name = "民谣";
-            this.民谣.Size = new System.Drawing.Size(112, 34);
+            this.民谣.Size = new System.Drawing.Size(75, 23);
             this.民谣.TabIndex = 62;
             this.民谣.Text = "民谣";
             this.民谣.UseVisualStyleBackColor = true;
@@ -1144,10 +1408,9 @@
             // 古典
             // 
             this.古典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.古典.Location = new System.Drawing.Point(544, 104);
-            this.古典.Margin = new System.Windows.Forms.Padding(4);
+            this.古典.Location = new System.Drawing.Point(363, 69);
             this.古典.Name = "古典";
-            this.古典.Size = new System.Drawing.Size(112, 34);
+            this.古典.Size = new System.Drawing.Size(75, 23);
             this.古典.TabIndex = 57;
             this.古典.Text = "古典";
             this.古典.UseVisualStyleBackColor = true;
@@ -1156,10 +1419,9 @@
             // 摇滚
             // 
             this.摇滚.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.摇滚.Location = new System.Drawing.Point(666, 60);
-            this.摇滚.Margin = new System.Windows.Forms.Padding(4);
+            this.摇滚.Location = new System.Drawing.Point(444, 40);
             this.摇滚.Name = "摇滚";
-            this.摇滚.Size = new System.Drawing.Size(112, 34);
+            this.摇滚.Size = new System.Drawing.Size(75, 23);
             this.摇滚.TabIndex = 55;
             this.摇滚.Text = "摇滚";
             this.摇滚.UseVisualStyleBackColor = true;
@@ -1168,10 +1430,9 @@
             // 流行
             // 
             this.流行.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.流行.Location = new System.Drawing.Point(544, 60);
-            this.流行.Margin = new System.Windows.Forms.Padding(4);
+            this.流行.Location = new System.Drawing.Point(363, 40);
             this.流行.Name = "流行";
-            this.流行.Size = new System.Drawing.Size(112, 34);
+            this.流行.Size = new System.Drawing.Size(75, 23);
             this.流行.TabIndex = 53;
             this.流行.Text = "流行";
             this.流行.UseVisualStyleBackColor = true;
@@ -1181,10 +1442,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(610, 18);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(407, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 33);
+            this.label5.Size = new System.Drawing.Size(56, 21);
             this.label5.TabIndex = 52;
             this.label5.Text = "流派";
             // 
@@ -1192,10 +1452,9 @@
             // 
             this.甜蜜.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.甜蜜.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.甜蜜.Location = new System.Drawing.Point(402, 104);
-            this.甜蜜.Margin = new System.Windows.Forms.Padding(4);
+            this.甜蜜.Location = new System.Drawing.Point(268, 69);
             this.甜蜜.Name = "甜蜜";
-            this.甜蜜.Size = new System.Drawing.Size(112, 34);
+            this.甜蜜.Size = new System.Drawing.Size(75, 23);
             this.甜蜜.TabIndex = 42;
             this.甜蜜.Text = "甜蜜";
             this.甜蜜.UseVisualStyleBackColor = true;
@@ -1204,10 +1463,9 @@
             // 励志
             // 
             this.励志.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.励志.Location = new System.Drawing.Point(280, 104);
-            this.励志.Margin = new System.Windows.Forms.Padding(4);
+            this.励志.Location = new System.Drawing.Point(187, 69);
             this.励志.Name = "励志";
-            this.励志.Size = new System.Drawing.Size(112, 34);
+            this.励志.Size = new System.Drawing.Size(75, 23);
             this.励志.TabIndex = 41;
             this.励志.Text = "励志";
             this.励志.UseVisualStyleBackColor = true;
@@ -1216,10 +1474,9 @@
             // 兴奋
             // 
             this.兴奋.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.兴奋.Location = new System.Drawing.Point(402, 60);
-            this.兴奋.Margin = new System.Windows.Forms.Padding(4);
+            this.兴奋.Location = new System.Drawing.Point(268, 40);
             this.兴奋.Name = "兴奋";
-            this.兴奋.Size = new System.Drawing.Size(112, 34);
+            this.兴奋.Size = new System.Drawing.Size(75, 23);
             this.兴奋.TabIndex = 40;
             this.兴奋.Text = "兴奋";
             this.兴奋.UseVisualStyleBackColor = true;
@@ -1228,10 +1485,9 @@
             // 伤感
             // 
             this.伤感.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.伤感.Location = new System.Drawing.Point(280, 60);
-            this.伤感.Margin = new System.Windows.Forms.Padding(4);
+            this.伤感.Location = new System.Drawing.Point(187, 40);
             this.伤感.Name = "伤感";
-            this.伤感.Size = new System.Drawing.Size(112, 34);
+            this.伤感.Size = new System.Drawing.Size(75, 23);
             this.伤感.TabIndex = 39;
             this.伤感.Text = "伤感";
             this.伤感.UseVisualStyleBackColor = true;
@@ -1241,20 +1497,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(354, 16);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(236, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 33);
+            this.label7.Size = new System.Drawing.Size(56, 21);
             this.label7.TabIndex = 38;
             this.label7.Text = "心情";
             // 
             // 古风
             // 
             this.古风.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.古风.Location = new System.Drawing.Point(135, 104);
-            this.古风.Margin = new System.Windows.Forms.Padding(4);
+            this.古风.Location = new System.Drawing.Point(90, 69);
             this.古风.Name = "古风";
-            this.古风.Size = new System.Drawing.Size(112, 34);
+            this.古风.Size = new System.Drawing.Size(75, 23);
             this.古风.TabIndex = 31;
             this.古风.Text = "古风";
             this.古风.UseVisualStyleBackColor = true;
@@ -1263,10 +1517,9 @@
             // 轻音乐
             // 
             this.轻音乐.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.轻音乐.Location = new System.Drawing.Point(14, 104);
-            this.轻音乐.Margin = new System.Windows.Forms.Padding(4);
+            this.轻音乐.Location = new System.Drawing.Point(9, 69);
             this.轻音乐.Name = "轻音乐";
-            this.轻音乐.Size = new System.Drawing.Size(112, 34);
+            this.轻音乐.Size = new System.Drawing.Size(75, 23);
             this.轻音乐.TabIndex = 29;
             this.轻音乐.Text = "轻音乐";
             this.轻音乐.UseVisualStyleBackColor = true;
@@ -1275,10 +1528,9 @@
             // 经典
             // 
             this.经典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.经典.Location = new System.Drawing.Point(135, 60);
-            this.经典.Margin = new System.Windows.Forms.Padding(4);
+            this.经典.Location = new System.Drawing.Point(90, 40);
             this.经典.Name = "经典";
-            this.经典.Size = new System.Drawing.Size(112, 34);
+            this.经典.Size = new System.Drawing.Size(75, 23);
             this.经典.TabIndex = 28;
             this.经典.Text = "经典";
             this.经典.UseVisualStyleBackColor = true;
@@ -1287,10 +1539,9 @@
             // 翻唱
             // 
             this.翻唱.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.翻唱.Location = new System.Drawing.Point(14, 60);
-            this.翻唱.Margin = new System.Windows.Forms.Padding(4);
+            this.翻唱.Location = new System.Drawing.Point(9, 40);
             this.翻唱.Name = "翻唱";
-            this.翻唱.Size = new System.Drawing.Size(112, 34);
+            this.翻唱.Size = new System.Drawing.Size(75, 23);
             this.翻唱.TabIndex = 27;
             this.翻唱.Text = "翻唱";
             this.翻唱.UseVisualStyleBackColor = true;
@@ -1300,26 +1551,27 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(80, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(53, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 33);
+            this.label8.Size = new System.Drawing.Size(56, 21);
             this.label8.TabIndex = 26;
             this.label8.Text = "主题";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 897);
-            this.Controls.Add(this.pinyinPanel);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.songNamePanel);
             this.Controls.Add(this.singerPanel1);
+            this.Controls.Add(this.songNamePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.publicpanel2);
             this.Controls.Add(this.publicPanel1);
+            this.Controls.Add(this.pinyinPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -1446,5 +1698,6 @@
         private System.Windows.Forms.Button 经典;
         private System.Windows.Forms.Button 翻唱;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
