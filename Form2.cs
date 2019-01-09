@@ -25,6 +25,7 @@ namespace KTV
         private MySqlDataAdapter SingerAdapter;
         private DataSet dsong;
         private DataSet dsinger;
+        private string where;
         //private MySqlCommand findsong,findsinger;
         //private MySqlDataReader sdr,sdr2;
                
@@ -47,6 +48,7 @@ namespace KTV
         //歌手点歌
         private void ChooseSinger_Click(object sender, EventArgs e)
         {
+            where = "歌手";
             panel1.Visible = false;
             this.textBox13.Clear();
             listBox3.Items.Clear();
@@ -109,17 +111,18 @@ namespace KTV
 //////////////////////////////////////////////////////搜索类别////////////////////////////////////////
  private void LanguageButtons_Click(object sender, EventArgs e)
         {
+            where = "分类";
             Button topic = (Button)sender;
             this.panel2.Visible = false;
             this.panel3.Visible = true;
             this.label4.Text = topic.Text;
             string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\"+topic.Text+".jpg";
-            //this.pictureBox1.Load(picpath);
+            this.pictureBox1.Load(picpath);
             this.listBox1.Items.Clear();
             listSongid.Clear();
 
             //显示歌曲列表
-            SongAdapter = new MySqlDataAdapter("select * from song where language = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
+            SongAdapter = new MySqlDataAdapter("select * from song where language = \'" + topic.Text + "\'", conn);
             dsong = new DataSet();
             SongAdapter.Fill(dsong, "song");
             string songitem;
@@ -139,17 +142,18 @@ namespace KTV
         }
         private void TopicButtons_Click(object sender, EventArgs e)
         {
+            where = "分类";
             Button topic =(Button)sender;
             this.panel2.Visible = false;
             this.panel3.Visible=true;
             this.label4.Text =topic.Text;
             string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\"+topic.Text+".jpg";
-            //this.pictureBox1.Load(picpath);
+            this.pictureBox1.Load(picpath);
             this.listBox1.Items.Clear();
             listSongid.Clear();
 
             //显示歌曲列表
-            SongAdapter = new MySqlDataAdapter("select * from song where songtype = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
+            SongAdapter = new MySqlDataAdapter("select * from song where songtopic = \'" + topic.Text + "\'", conn);//应为songtopic,改了数据库再说
             dsong = new DataSet();
             SongAdapter.Fill(dsong, "song");
             string songitem;
@@ -169,17 +173,19 @@ namespace KTV
         }
         private void MoodButtons_Click(object sender, EventArgs e)
         {
+
+            where = "分类";
             Button topic = (Button)sender;
             this.panel2.Visible = false;
             this.panel3.Visible = true;
             this.label4.Text = topic.Text;
             string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\" + topic.Text + ".jpg";
-            //this.pictureBox1.Load(picpath);
+            this.pictureBox1.Load(picpath);
             this.listBox1.Items.Clear();
             listSongid.Clear();
 
             //显示歌曲列表
-            SongAdapter = new MySqlDataAdapter("select * from song where songtopic = \'" + topic.Text + "\'", conn);//应为mood,改了数据库再说
+            SongAdapter = new MySqlDataAdapter("select * from song where songtype = \'" + topic.Text + "\'", conn);//应为mood,改了数据库再说
             dsong = new DataSet();
             SongAdapter.Fill(dsong, "song");
             string songitem;
@@ -199,13 +205,13 @@ namespace KTV
         }
         private void GenreButtons_Click(object sender,EventArgs e)
         {
+            where = "分类";
             Button topic = (Button)sender;
             this.panel2.Visible = false;
             this.panel3.Visible = true;
             this.label4.Text = topic.Text;
-            //string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\" + topic.Text + ".jpg";
-            string picpath = "";
-            //this.pictureBox1.Load(picpath);
+            string picpath = "C:\\Users\\tianyang\\Pictures\\Saved Pictures\\" + topic.Text + ".jpg";
+            this.pictureBox1.Load(picpath);
             this.listBox1.Items.Clear();
             listSongid.Clear();
 
@@ -425,7 +431,7 @@ namespace KTV
             //清空上一次搜索出歌曲的列表listBox1和listSongid
             listBox3.Items.Clear();
             listSongid.Clear();
-
+           
             SingerAdapter = new MySqlDataAdapter("select * from singer ", conn);
             dsinger = new DataSet();
             SingerAdapter.Fill(dsinger, "singer");
@@ -637,6 +643,15 @@ namespace KTV
             listSongpath.Add(@dr.Field<string>("path"));
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.panel3.Visible = false;
+            if (where == "分类")
+                this.panel2.Visible = true;
+            else if (where == "歌手")
+                this.singerPanel1.Visible = true;
+            else;
+        }
         //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
     }
 }
