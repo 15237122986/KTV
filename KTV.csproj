@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>C:\Users\刘迪\Desktop\C#\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -45,6 +48,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
@@ -82,13 +86,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -129,6 +128,16 @@
     <Content Include="MySQL.Data.EntityFrameworkCore.Design.dll" />
     <Content Include="MySQL.Data.EntityFrameworkCore.dll" />
     <Content Include="MySql.Web.dll" />
+    <None Include="Resources\图片6.png" />
+    <None Include="Resources\图片8.png" />
+    <None Include="Resources\重唱.PNG" />
+    <None Include="Resources\已点.PNG" />
+    <None Include="Resources\切歌.PNG" />
+    <None Include="Resources\图片7.png" />
+    <None Include="Resources\Home.PNG" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\暂停.PNG" />
+    <None Include="Resources\播放.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

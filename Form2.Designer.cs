@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.ChooseSongName = new System.Windows.Forms.Button();
             this.ChooseCategory = new System.Windows.Forms.Button();
@@ -35,8 +36,12 @@
             this.ChooseSinger = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.publicPanel1 = new System.Windows.Forms.Panel();
+            this.songlistLabel = new System.Windows.Forms.Label();
+            this.playlabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.MediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            this.Vounmn = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
             this.SeeSong = new System.Windows.Forms.Button();
             this.NextSong = new System.Windows.Forms.Button();
@@ -62,6 +67,27 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.日语 = new System.Windows.Forms.Button();
+            this.欧美 = new System.Windows.Forms.Button();
+            this.粤语 = new System.Windows.Forms.Button();
+            this.华语 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.民谣 = new System.Windows.Forms.Button();
+            this.古典 = new System.Windows.Forms.Button();
+            this.摇滚 = new System.Windows.Forms.Button();
+            this.流行 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.甜蜜 = new System.Windows.Forms.Button();
+            this.励志 = new System.Windows.Forms.Button();
+            this.兴奋 = new System.Windows.Forms.Button();
+            this.伤感 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.古风 = new System.Windows.Forms.Button();
+            this.轻音乐 = new System.Windows.Forms.Button();
+            this.经典 = new System.Windows.Forms.Button();
+            this.翻唱 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pinyinPanel = new System.Windows.Forms.Panel();
@@ -108,27 +134,8 @@
             this.button77 = new System.Windows.Forms.Button();
             this.button78 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.日语 = new System.Windows.Forms.Button();
-            this.欧美 = new System.Windows.Forms.Button();
-            this.粤语 = new System.Windows.Forms.Button();
-            this.华语 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.民谣 = new System.Windows.Forms.Button();
-            this.古典 = new System.Windows.Forms.Button();
-            this.摇滚 = new System.Windows.Forms.Button();
-            this.流行 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.甜蜜 = new System.Windows.Forms.Button();
-            this.励志 = new System.Windows.Forms.Button();
-            this.兴奋 = new System.Windows.Forms.Button();
-            this.伤感 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.古风 = new System.Windows.Forms.Button();
-            this.轻音乐 = new System.Windows.Forms.Button();
-            this.经典 = new System.Windows.Forms.Button();
-            this.翻唱 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.playerStateTimer = new System.Windows.Forms.Timer(this.components);
+            this.songCountTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.publicPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer1)).BeginInit();
@@ -137,54 +144,62 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.songNamePanel.SuspendLayout();
             this.singerPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.pinyinPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChooseSongName
             // 
-            this.ChooseSongName.Location = new System.Drawing.Point(428, 12);
+            this.ChooseSongName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChooseSongName.BackgroundImage")));
+            this.ChooseSongName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ChooseSongName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseSongName.Location = new System.Drawing.Point(72, 33);
             this.ChooseSongName.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseSongName.Name = "ChooseSongName";
-            this.ChooseSongName.Size = new System.Drawing.Size(114, 166);
+            this.ChooseSongName.Size = new System.Drawing.Size(256, 253);
             this.ChooseSongName.TabIndex = 11;
-            this.ChooseSongName.Text = "歌名点歌";
             this.ChooseSongName.UseVisualStyleBackColor = true;
             this.ChooseSongName.Click += new System.EventHandler(this.ChooseSongName_Click);
             // 
             // ChooseCategory
             // 
-            this.ChooseCategory.Location = new System.Drawing.Point(16, 12);
+            this.ChooseCategory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChooseCategory.BackgroundImage")));
+            this.ChooseCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ChooseCategory.FlatAppearance.BorderSize = 0;
+            this.ChooseCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseCategory.Location = new System.Drawing.Point(335, 51);
             this.ChooseCategory.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseCategory.Name = "ChooseCategory";
-            this.ChooseCategory.Size = new System.Drawing.Size(114, 166);
+            this.ChooseCategory.Size = new System.Drawing.Size(127, 111);
             this.ChooseCategory.TabIndex = 8;
-            this.ChooseCategory.Text = "类型点歌";
             this.ChooseCategory.UseVisualStyleBackColor = true;
             this.ChooseCategory.Click += new System.EventHandler(this.ChooseCategory_Click);
             // 
             // ChoosePingyin
             // 
-            this.ChoosePingyin.Location = new System.Drawing.Point(154, 12);
+            this.ChoosePingyin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChoosePingyin.BackgroundImage")));
+            this.ChoosePingyin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ChoosePingyin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChoosePingyin.Location = new System.Drawing.Point(458, 51);
             this.ChoosePingyin.Margin = new System.Windows.Forms.Padding(4);
             this.ChoosePingyin.Name = "ChoosePingyin";
-            this.ChoosePingyin.Size = new System.Drawing.Size(120, 166);
+            this.ChoosePingyin.Size = new System.Drawing.Size(98, 108);
             this.ChoosePingyin.TabIndex = 9;
-            this.ChoosePingyin.Text = "拼音点歌";
             this.ChoosePingyin.UseVisualStyleBackColor = true;
             this.ChoosePingyin.Click += new System.EventHandler(this.ChoosePingyin_Click);
             // 
             // ChooseSinger
             // 
-            this.ChooseSinger.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ChooseSinger.Location = new System.Drawing.Point(302, 12);
+            this.ChooseSinger.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChooseSinger.BackgroundImage")));
+            this.ChooseSinger.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ChooseSinger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseSinger.Location = new System.Drawing.Point(130, 167);
             this.ChooseSinger.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseSinger.Name = "ChooseSinger";
-            this.ChooseSinger.Size = new System.Drawing.Size(110, 166);
+            this.ChooseSinger.Size = new System.Drawing.Size(614, 110);
             this.ChooseSinger.TabIndex = 10;
-            this.ChooseSinger.Text = "歌手点歌";
             this.ChooseSinger.UseVisualStyleBackColor = true;
             this.ChooseSinger.Click += new System.EventHandler(this.ChooseSinger_Click);
             // 
@@ -196,95 +211,163 @@
             this.panel1.Controls.Add(this.ChooseCategory);
             this.panel1.Location = new System.Drawing.Point(21, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 195);
+            this.panel1.Size = new System.Drawing.Size(767, 355);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // publicPanel1
             // 
+            this.publicPanel1.Controls.Add(this.songlistLabel);
+            this.publicPanel1.Controls.Add(this.playlabel);
+            this.publicPanel1.Controls.Add(this.label9);
+            this.publicPanel1.Controls.Add(this.label3);
+            this.publicPanel1.Controls.Add(this.label2);
             this.publicPanel1.Controls.Add(this.MediaPlayer1);
-            this.publicPanel1.Controls.Add(this.Vounmn);
             this.publicPanel1.Controls.Add(this.playButton);
             this.publicPanel1.Controls.Add(this.SeeSong);
             this.publicPanel1.Controls.Add(this.NextSong);
             this.publicPanel1.Controls.Add(this.ReSing);
             this.publicPanel1.Controls.Add(this.Home);
-            this.publicPanel1.Location = new System.Drawing.Point(10, 775);
+            this.publicPanel1.Location = new System.Drawing.Point(8, 462);
             this.publicPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.publicPanel1.Name = "publicPanel1";
-            this.publicPanel1.Size = new System.Drawing.Size(1204, 122);
+            this.publicPanel1.Size = new System.Drawing.Size(1155, 122);
             this.publicPanel1.TabIndex = 13;
+            // 
+            // songlistLabel
+            // 
+            this.songlistLabel.AutoSize = true;
+            this.songlistLabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.songlistLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.songlistLabel.Location = new System.Drawing.Point(774, 45);
+            this.songlistLabel.Name = "songlistLabel";
+            this.songlistLabel.Size = new System.Drawing.Size(92, 31);
+            this.songlistLabel.TabIndex = 11;
+            this.songlistLabel.Text = "已点(0)";
+            // 
+            // playlabel
+            // 
+            this.playlabel.AutoSize = true;
+            this.playlabel.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.playlabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.playlabel.Location = new System.Drawing.Point(358, 83);
+            this.playlabel.Name = "playlabel";
+            this.playlabel.Size = new System.Drawing.Size(62, 31);
+            this.playlabel.TabIndex = 10;
+            this.playlabel.Text = "播放";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Info;
+            this.label9.Location = new System.Drawing.Point(252, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 31);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "切歌";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(137, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 31);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "重唱";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(21, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 31);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "首页";
             // 
             // MediaPlayer1
             // 
             this.MediaPlayer1.Enabled = true;
-            this.MediaPlayer1.Location = new System.Drawing.Point(439, 27);
+            this.MediaPlayer1.Location = new System.Drawing.Point(480, 28);
             this.MediaPlayer1.Name = "MediaPlayer1";
             this.MediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MediaPlayer1.OcxState")));
             this.MediaPlayer1.Size = new System.Drawing.Size(277, 73);
             this.MediaPlayer1.TabIndex = 6;
-            // 
-            // Vounmn
-            // 
-            this.Vounmn.Location = new System.Drawing.Point(851, 27);
-            this.Vounmn.Margin = new System.Windows.Forms.Padding(4);
-            this.Vounmn.Name = "Vounmn";
-            this.Vounmn.Size = new System.Drawing.Size(99, 84);
-            this.Vounmn.TabIndex = 5;
-            this.Vounmn.Text = "音量";
-            this.Vounmn.UseVisualStyleBackColor = true;
+            this.MediaPlayer1.Enter += new System.EventHandler(this.MediaPlayer1_Enter);
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(1075, 27);
+            this.playButton.BackColor = System.Drawing.Color.Transparent;
+            this.playButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playButton.BackgroundImage")));
+            this.playButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.playButton.FlatAppearance.BorderSize = 0;
+            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playButton.Location = new System.Drawing.Point(334, 0);
             this.playButton.Margin = new System.Windows.Forms.Padding(4);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(99, 84);
             this.playButton.TabIndex = 4;
-            this.playButton.Text = "播放";
-            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.play_Click);
             // 
             // SeeSong
             // 
-            this.SeeSong.Location = new System.Drawing.Point(952, 27);
+            this.SeeSong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SeeSong.BackgroundImage")));
+            this.SeeSong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SeeSong.FlatAppearance.BorderSize = 0;
+            this.SeeSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SeeSong.Location = new System.Drawing.Point(870, 28);
             this.SeeSong.Margin = new System.Windows.Forms.Padding(4);
             this.SeeSong.Name = "SeeSong";
-            this.SeeSong.Size = new System.Drawing.Size(99, 84);
+            this.SeeSong.Size = new System.Drawing.Size(73, 73);
             this.SeeSong.TabIndex = 3;
-            this.SeeSong.Text = "已点";
             this.SeeSong.UseVisualStyleBackColor = true;
+            this.SeeSong.Click += new System.EventHandler(this.SeeSong_Click);
             // 
             // NextSong
             // 
-            this.NextSong.Location = new System.Drawing.Point(237, 27);
+            this.NextSong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NextSong.BackgroundImage")));
+            this.NextSong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NextSong.FlatAppearance.BorderSize = 0;
+            this.NextSong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextSong.Location = new System.Drawing.Point(242, 4);
             this.NextSong.Margin = new System.Windows.Forms.Padding(4);
             this.NextSong.Name = "NextSong";
             this.NextSong.Size = new System.Drawing.Size(99, 84);
             this.NextSong.TabIndex = 2;
-            this.NextSong.Text = "切歌";
             this.NextSong.UseVisualStyleBackColor = true;
             this.NextSong.Click += new System.EventHandler(this.NextSong_Click);
             // 
             // ReSing
             // 
-            this.ReSing.Location = new System.Drawing.Point(130, 27);
+            this.ReSing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReSing.BackgroundImage")));
+            this.ReSing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ReSing.FlatAppearance.BorderSize = 0;
+            this.ReSing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReSing.Location = new System.Drawing.Point(120, 0);
             this.ReSing.Margin = new System.Windows.Forms.Padding(4);
             this.ReSing.Name = "ReSing";
             this.ReSing.Size = new System.Drawing.Size(99, 84);
             this.ReSing.TabIndex = 1;
-            this.ReSing.Text = "重唱";
             this.ReSing.UseVisualStyleBackColor = true;
             this.ReSing.Click += new System.EventHandler(this.ReSing_Click);
             // 
             // Home
             // 
-            this.Home.Location = new System.Drawing.Point(23, 27);
+            this.Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home.BackgroundImage")));
+            this.Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Location = new System.Drawing.Point(4, 0);
             this.Home.Margin = new System.Windows.Forms.Padding(4);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(99, 84);
             this.Home.TabIndex = 0;
-            this.Home.Text = "主界面";
             this.Home.UseVisualStyleBackColor = true;
             this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
@@ -295,15 +378,15 @@
             this.publicpanel2.Controls.Add(this.listBox2);
             this.publicpanel2.Controls.Add(this.label1);
             this.publicpanel2.Controls.Add(this.textBox1);
-            this.publicpanel2.Location = new System.Drawing.Point(10, 2);
+            this.publicpanel2.Location = new System.Drawing.Point(32, 20);
             this.publicpanel2.Margin = new System.Windows.Forms.Padding(4);
             this.publicpanel2.Name = "publicpanel2";
-            this.publicpanel2.Size = new System.Drawing.Size(1236, 95);
+            this.publicpanel2.Size = new System.Drawing.Size(739, 93);
             this.publicpanel2.TabIndex = 14;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(891, 34);
+            this.deleteButton.Location = new System.Drawing.Point(394, 48);
             this.deleteButton.Margin = new System.Windows.Forms.Padding(4);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(86, 34);
@@ -314,7 +397,7 @@
             // 
             // topButton
             // 
-            this.topButton.Location = new System.Drawing.Point(891, 0);
+            this.topButton.Location = new System.Drawing.Point(400, 7);
             this.topButton.Margin = new System.Windows.Forms.Padding(4);
             this.topButton.Name = "topButton";
             this.topButton.Size = new System.Drawing.Size(80, 34);
@@ -327,16 +410,18 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 18;
-            this.listBox2.Location = new System.Drawing.Point(984, -4);
+            this.listBox2.Location = new System.Drawing.Point(487, 16);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(236, 58);
+            this.listBox2.Size = new System.Drawing.Size(241, 58);
             this.listBox2.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(147, 16);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(4, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 21);
@@ -345,7 +430,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 9);
+            this.textBox1.Location = new System.Drawing.Point(125, 12);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 28);
@@ -356,12 +441,11 @@
             this.panel3.Controls.Add(this.listBox1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(613, 181);
+            this.panel3.Location = new System.Drawing.Point(821, 209);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(495, 294);
             this.panel3.TabIndex = 76;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // listBox1
             // 
@@ -398,11 +482,10 @@
             this.songNamePanel.Controls.Add(this.songNameTextBox);
             this.songNamePanel.Controls.Add(this.songNameListBox);
             this.songNamePanel.Controls.Add(this.songNameSearchButton);
-            this.songNamePanel.Location = new System.Drawing.Point(670, 108);
+            this.songNamePanel.Location = new System.Drawing.Point(840, 221);
             this.songNamePanel.Name = "songNamePanel";
             this.songNamePanel.Size = new System.Drawing.Size(366, 342);
             this.songNamePanel.TabIndex = 74;
-            this.songNamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.songNamePanel_Paint);
             // 
             // songNameTextBox
             // 
@@ -420,18 +503,20 @@
             this.songNameListBox.Location = new System.Drawing.Point(22, 62);
             this.songNameListBox.Margin = new System.Windows.Forms.Padding(4);
             this.songNameListBox.Name = "songNameListBox";
-            this.songNameListBox.Size = new System.Drawing.Size(283, 238);
+            this.songNameListBox.Size = new System.Drawing.Size(283, 220);
             this.songNameListBox.TabIndex = 46;
             this.songNameListBox.SelectedIndexChanged += new System.EventHandler(this.songNameListBox_SelectedIndexChanged);
             // 
             // songNameSearchButton
             // 
-            this.songNameSearchButton.Location = new System.Drawing.Point(228, 18);
+            this.songNameSearchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("songNameSearchButton.BackgroundImage")));
+            this.songNameSearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.songNameSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.songNameSearchButton.Location = new System.Drawing.Point(158, -22);
             this.songNameSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.songNameSearchButton.Name = "songNameSearchButton";
-            this.songNameSearchButton.Size = new System.Drawing.Size(80, 34);
+            this.songNameSearchButton.Size = new System.Drawing.Size(151, 110);
             this.songNameSearchButton.TabIndex = 49;
-            this.songNameSearchButton.Text = "搜索";
             this.songNameSearchButton.UseVisualStyleBackColor = true;
             this.songNameSearchButton.Click += new System.EventHandler(this.songNameSearch_Click);
             // 
@@ -442,14 +527,14 @@
             this.singerPanel1.Controls.Add(this.textBox13);
             this.singerPanel1.Controls.Add(this.button14);
             this.singerPanel1.Controls.Add(this.button3);
+            this.singerPanel1.Controls.Add(this.panel2);
             this.singerPanel1.Controls.Add(this.button2);
             this.singerPanel1.Controls.Add(this.button1);
-            this.singerPanel1.Location = new System.Drawing.Point(18, 314);
+            this.singerPanel1.Location = new System.Drawing.Point(878, 134);
             this.singerPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.singerPanel1.Name = "singerPanel1";
             this.singerPanel1.Size = new System.Drawing.Size(407, 417);
             this.singerPanel1.TabIndex = 75;
-            this.singerPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.singerPanel1_Paint);
             // 
             // listBox3
             // 
@@ -458,7 +543,7 @@
             this.listBox3.Location = new System.Drawing.Point(24, 144);
             this.listBox3.Margin = new System.Windows.Forms.Padding(4);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(324, 238);
+            this.listBox3.Size = new System.Drawing.Size(324, 220);
             this.listBox3.TabIndex = 75;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
@@ -504,6 +589,271 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.日语);
+            this.panel2.Controls.Add(this.欧美);
+            this.panel2.Controls.Add(this.粤语);
+            this.panel2.Controls.Add(this.华语);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.民谣);
+            this.panel2.Controls.Add(this.古典);
+            this.panel2.Controls.Add(this.摇滚);
+            this.panel2.Controls.Add(this.流行);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.甜蜜);
+            this.panel2.Controls.Add(this.励志);
+            this.panel2.Controls.Add(this.兴奋);
+            this.panel2.Controls.Add(this.伤感);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.古风);
+            this.panel2.Controls.Add(this.轻音乐);
+            this.panel2.Controls.Add(this.经典);
+            this.panel2.Controls.Add(this.翻唱);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(3, 247);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(971, 166);
+            this.panel2.TabIndex = 77;
+            // 
+            // 日语
+            // 
+            this.日语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.日语.Location = new System.Drawing.Point(806, 104);
+            this.日语.Margin = new System.Windows.Forms.Padding(4);
+            this.日语.Name = "日语";
+            this.日语.Size = new System.Drawing.Size(112, 34);
+            this.日语.TabIndex = 68;
+            this.日语.Text = "日语";
+            this.日语.UseVisualStyleBackColor = true;
+            this.日语.Click += new System.EventHandler(this.LanguageButtons_Click);
+            // 
+            // 欧美
+            // 
+            this.欧美.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.欧美.Location = new System.Drawing.Point(927, 104);
+            this.欧美.Margin = new System.Windows.Forms.Padding(4);
+            this.欧美.Name = "欧美";
+            this.欧美.Size = new System.Drawing.Size(112, 34);
+            this.欧美.TabIndex = 67;
+            this.欧美.Text = "欧美";
+            this.欧美.UseVisualStyleBackColor = true;
+            this.欧美.Click += new System.EventHandler(this.LanguageButtons_Click);
+            // 
+            // 粤语
+            // 
+            this.粤语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.粤语.Location = new System.Drawing.Point(927, 60);
+            this.粤语.Margin = new System.Windows.Forms.Padding(4);
+            this.粤语.Name = "粤语";
+            this.粤语.Size = new System.Drawing.Size(112, 34);
+            this.粤语.TabIndex = 65;
+            this.粤语.Text = "粤语";
+            this.粤语.UseVisualStyleBackColor = true;
+            this.粤语.Click += new System.EventHandler(this.LanguageButtons_Click);
+            // 
+            // 华语
+            // 
+            this.华语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.华语.Location = new System.Drawing.Point(806, 60);
+            this.华语.Margin = new System.Windows.Forms.Padding(4);
+            this.华语.Name = "华语";
+            this.华语.Size = new System.Drawing.Size(112, 34);
+            this.华语.TabIndex = 64;
+            this.华语.Text = "华语";
+            this.华语.UseVisualStyleBackColor = true;
+            this.华语.Click += new System.EventHandler(this.LanguageButtons_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(878, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 33);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "语言";
+            // 
+            // 民谣
+            // 
+            this.民谣.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.民谣.Location = new System.Drawing.Point(666, 104);
+            this.民谣.Margin = new System.Windows.Forms.Padding(4);
+            this.民谣.Name = "民谣";
+            this.民谣.Size = new System.Drawing.Size(112, 34);
+            this.民谣.TabIndex = 62;
+            this.民谣.Text = "民谣";
+            this.民谣.UseVisualStyleBackColor = true;
+            this.民谣.Click += new System.EventHandler(this.GenreButtons_Click);
+            // 
+            // 古典
+            // 
+            this.古典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古典.Location = new System.Drawing.Point(544, 104);
+            this.古典.Margin = new System.Windows.Forms.Padding(4);
+            this.古典.Name = "古典";
+            this.古典.Size = new System.Drawing.Size(112, 34);
+            this.古典.TabIndex = 57;
+            this.古典.Text = "古典";
+            this.古典.UseVisualStyleBackColor = true;
+            this.古典.Click += new System.EventHandler(this.GenreButtons_Click);
+            // 
+            // 摇滚
+            // 
+            this.摇滚.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.摇滚.Location = new System.Drawing.Point(666, 60);
+            this.摇滚.Margin = new System.Windows.Forms.Padding(4);
+            this.摇滚.Name = "摇滚";
+            this.摇滚.Size = new System.Drawing.Size(112, 34);
+            this.摇滚.TabIndex = 55;
+            this.摇滚.Text = "摇滚";
+            this.摇滚.UseVisualStyleBackColor = true;
+            this.摇滚.Click += new System.EventHandler(this.GenreButtons_Click);
+            // 
+            // 流行
+            // 
+            this.流行.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.流行.Location = new System.Drawing.Point(544, 60);
+            this.流行.Margin = new System.Windows.Forms.Padding(4);
+            this.流行.Name = "流行";
+            this.流行.Size = new System.Drawing.Size(112, 34);
+            this.流行.TabIndex = 53;
+            this.流行.Text = "流行";
+            this.流行.UseVisualStyleBackColor = true;
+            this.流行.Click += new System.EventHandler(this.GenreButtons_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(610, 18);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 33);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "流派";
+            // 
+            // 甜蜜
+            // 
+            this.甜蜜.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.甜蜜.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.甜蜜.Location = new System.Drawing.Point(402, 104);
+            this.甜蜜.Margin = new System.Windows.Forms.Padding(4);
+            this.甜蜜.Name = "甜蜜";
+            this.甜蜜.Size = new System.Drawing.Size(112, 34);
+            this.甜蜜.TabIndex = 42;
+            this.甜蜜.Text = "甜蜜";
+            this.甜蜜.UseVisualStyleBackColor = true;
+            this.甜蜜.Click += new System.EventHandler(this.MoodButtons_Click);
+            // 
+            // 励志
+            // 
+            this.励志.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.励志.Location = new System.Drawing.Point(280, 104);
+            this.励志.Margin = new System.Windows.Forms.Padding(4);
+            this.励志.Name = "励志";
+            this.励志.Size = new System.Drawing.Size(112, 34);
+            this.励志.TabIndex = 41;
+            this.励志.Text = "励志";
+            this.励志.UseVisualStyleBackColor = true;
+            this.励志.Click += new System.EventHandler(this.MoodButtons_Click);
+            // 
+            // 兴奋
+            // 
+            this.兴奋.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.兴奋.Location = new System.Drawing.Point(402, 60);
+            this.兴奋.Margin = new System.Windows.Forms.Padding(4);
+            this.兴奋.Name = "兴奋";
+            this.兴奋.Size = new System.Drawing.Size(112, 34);
+            this.兴奋.TabIndex = 40;
+            this.兴奋.Text = "兴奋";
+            this.兴奋.UseVisualStyleBackColor = true;
+            this.兴奋.Click += new System.EventHandler(this.MoodButtons_Click);
+            // 
+            // 伤感
+            // 
+            this.伤感.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.伤感.Location = new System.Drawing.Point(280, 60);
+            this.伤感.Margin = new System.Windows.Forms.Padding(4);
+            this.伤感.Name = "伤感";
+            this.伤感.Size = new System.Drawing.Size(112, 34);
+            this.伤感.TabIndex = 39;
+            this.伤感.Text = "伤感";
+            this.伤感.UseVisualStyleBackColor = true;
+            this.伤感.Click += new System.EventHandler(this.MoodButtons_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(354, 16);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 33);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "心情";
+            // 
+            // 古风
+            // 
+            this.古风.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古风.Location = new System.Drawing.Point(135, 104);
+            this.古风.Margin = new System.Windows.Forms.Padding(4);
+            this.古风.Name = "古风";
+            this.古风.Size = new System.Drawing.Size(112, 34);
+            this.古风.TabIndex = 31;
+            this.古风.Text = "古风";
+            this.古风.UseVisualStyleBackColor = true;
+            this.古风.Click += new System.EventHandler(this.TopicButtons_Click);
+            // 
+            // 轻音乐
+            // 
+            this.轻音乐.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.轻音乐.Location = new System.Drawing.Point(14, 104);
+            this.轻音乐.Margin = new System.Windows.Forms.Padding(4);
+            this.轻音乐.Name = "轻音乐";
+            this.轻音乐.Size = new System.Drawing.Size(112, 34);
+            this.轻音乐.TabIndex = 29;
+            this.轻音乐.Text = "轻音乐";
+            this.轻音乐.UseVisualStyleBackColor = true;
+            this.轻音乐.Click += new System.EventHandler(this.TopicButtons_Click);
+            // 
+            // 经典
+            // 
+            this.经典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.经典.Location = new System.Drawing.Point(135, 60);
+            this.经典.Margin = new System.Windows.Forms.Padding(4);
+            this.经典.Name = "经典";
+            this.经典.Size = new System.Drawing.Size(112, 34);
+            this.经典.TabIndex = 28;
+            this.经典.Text = "经典";
+            this.经典.UseVisualStyleBackColor = true;
+            this.经典.Click += new System.EventHandler(this.TopicButtons_Click);
+            // 
+            // 翻唱
+            // 
+            this.翻唱.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.翻唱.Location = new System.Drawing.Point(14, 60);
+            this.翻唱.Margin = new System.Windows.Forms.Padding(4);
+            this.翻唱.Name = "翻唱";
+            this.翻唱.Size = new System.Drawing.Size(112, 34);
+            this.翻唱.TabIndex = 27;
+            this.翻唱.Text = "翻唱";
+            this.翻唱.UseVisualStyleBackColor = true;
+            this.翻唱.Click += new System.EventHandler(this.TopicButtons_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(80, 16);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 33);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "主题";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(216, 63);
@@ -530,7 +880,7 @@
             // 
             this.pinyinPanel.Controls.Add(this.listBox4);
             this.pinyinPanel.Controls.Add(this.panel6);
-            this.pinyinPanel.Location = new System.Drawing.Point(494, 314);
+            this.pinyinPanel.Location = new System.Drawing.Point(652, 46);
             this.pinyinPanel.Margin = new System.Windows.Forms.Padding(4);
             this.pinyinPanel.Name = "pinyinPanel";
             this.pinyinPanel.Size = new System.Drawing.Size(640, 424);
@@ -543,7 +893,7 @@
             this.listBox4.Location = new System.Drawing.Point(478, 22);
             this.listBox4.Margin = new System.Windows.Forms.Padding(6);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(148, 382);
+            this.listBox4.Size = new System.Drawing.Size(148, 364);
             this.listBox4.TabIndex = 43;
             this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
@@ -1042,289 +1392,34 @@
             this.textBox3.Size = new System.Drawing.Size(220, 31);
             this.textBox3.TabIndex = 38;
             // 
-            // panel2
+            // timer1
             // 
-            this.panel2.Controls.Add(this.日语);
-            this.panel2.Controls.Add(this.欧美);
-            this.panel2.Controls.Add(this.粤语);
-            this.panel2.Controls.Add(this.华语);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.民谣);
-            this.panel2.Controls.Add(this.古典);
-            this.panel2.Controls.Add(this.摇滚);
-            this.panel2.Controls.Add(this.流行);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.甜蜜);
-            this.panel2.Controls.Add(this.励志);
-            this.panel2.Controls.Add(this.兴奋);
-            this.panel2.Controls.Add(this.伤感);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.古风);
-            this.panel2.Controls.Add(this.轻音乐);
-            this.panel2.Controls.Add(this.经典);
-            this.panel2.Controls.Add(this.翻唱);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(33, 561);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1060, 166);
-            this.panel2.TabIndex = 77;
+            this.playerStateTimer.Interval = 1000;
+            this.playerStateTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // 日语
+            // timer2
             // 
-            this.日语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.日语.Location = new System.Drawing.Point(806, 104);
-            this.日语.Margin = new System.Windows.Forms.Padding(4);
-            this.日语.Name = "日语";
-            this.日语.Size = new System.Drawing.Size(112, 34);
-            this.日语.TabIndex = 68;
-            this.日语.Text = "日语";
-            this.日语.UseVisualStyleBackColor = true;
-            this.日语.Click += new System.EventHandler(this.LanguageButtons_Click);
-            // 
-            // 欧美
-            // 
-            this.欧美.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.欧美.Location = new System.Drawing.Point(927, 104);
-            this.欧美.Margin = new System.Windows.Forms.Padding(4);
-            this.欧美.Name = "欧美";
-            this.欧美.Size = new System.Drawing.Size(112, 34);
-            this.欧美.TabIndex = 67;
-            this.欧美.Text = "欧美";
-            this.欧美.UseVisualStyleBackColor = true;
-            this.欧美.Click += new System.EventHandler(this.LanguageButtons_Click);
-            // 
-            // 粤语
-            // 
-            this.粤语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.粤语.Location = new System.Drawing.Point(927, 60);
-            this.粤语.Margin = new System.Windows.Forms.Padding(4);
-            this.粤语.Name = "粤语";
-            this.粤语.Size = new System.Drawing.Size(112, 34);
-            this.粤语.TabIndex = 65;
-            this.粤语.Text = "粤语";
-            this.粤语.UseVisualStyleBackColor = true;
-            this.粤语.Click += new System.EventHandler(this.LanguageButtons_Click);
-            // 
-            // 华语
-            // 
-            this.华语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.华语.Location = new System.Drawing.Point(806, 60);
-            this.华语.Margin = new System.Windows.Forms.Padding(4);
-            this.华语.Name = "华语";
-            this.华语.Size = new System.Drawing.Size(112, 34);
-            this.华语.TabIndex = 64;
-            this.华语.Text = "华语";
-            this.华语.UseVisualStyleBackColor = true;
-            this.华语.Click += new System.EventHandler(this.LanguageButtons_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(878, 16);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 33);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "语言";
-            // 
-            // 民谣
-            // 
-            this.民谣.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.民谣.Location = new System.Drawing.Point(666, 104);
-            this.民谣.Margin = new System.Windows.Forms.Padding(4);
-            this.民谣.Name = "民谣";
-            this.民谣.Size = new System.Drawing.Size(112, 34);
-            this.民谣.TabIndex = 62;
-            this.民谣.Text = "民谣";
-            this.民谣.UseVisualStyleBackColor = true;
-            this.民谣.Click += new System.EventHandler(this.GenreButtons_Click);
-            // 
-            // 古典
-            // 
-            this.古典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.古典.Location = new System.Drawing.Point(544, 104);
-            this.古典.Margin = new System.Windows.Forms.Padding(4);
-            this.古典.Name = "古典";
-            this.古典.Size = new System.Drawing.Size(112, 34);
-            this.古典.TabIndex = 57;
-            this.古典.Text = "古典";
-            this.古典.UseVisualStyleBackColor = true;
-            this.古典.Click += new System.EventHandler(this.GenreButtons_Click);
-            // 
-            // 摇滚
-            // 
-            this.摇滚.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.摇滚.Location = new System.Drawing.Point(666, 60);
-            this.摇滚.Margin = new System.Windows.Forms.Padding(4);
-            this.摇滚.Name = "摇滚";
-            this.摇滚.Size = new System.Drawing.Size(112, 34);
-            this.摇滚.TabIndex = 55;
-            this.摇滚.Text = "摇滚";
-            this.摇滚.UseVisualStyleBackColor = true;
-            this.摇滚.Click += new System.EventHandler(this.GenreButtons_Click);
-            // 
-            // 流行
-            // 
-            this.流行.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.流行.Location = new System.Drawing.Point(544, 60);
-            this.流行.Margin = new System.Windows.Forms.Padding(4);
-            this.流行.Name = "流行";
-            this.流行.Size = new System.Drawing.Size(112, 34);
-            this.流行.TabIndex = 53;
-            this.流行.Text = "流行";
-            this.流行.UseVisualStyleBackColor = true;
-            this.流行.Click += new System.EventHandler(this.GenreButtons_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(610, 18);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 33);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "流派";
-            // 
-            // 甜蜜
-            // 
-            this.甜蜜.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.甜蜜.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.甜蜜.Location = new System.Drawing.Point(402, 104);
-            this.甜蜜.Margin = new System.Windows.Forms.Padding(4);
-            this.甜蜜.Name = "甜蜜";
-            this.甜蜜.Size = new System.Drawing.Size(112, 34);
-            this.甜蜜.TabIndex = 42;
-            this.甜蜜.Text = "甜蜜";
-            this.甜蜜.UseVisualStyleBackColor = true;
-            this.甜蜜.Click += new System.EventHandler(this.MoodButtons_Click);
-            // 
-            // 励志
-            // 
-            this.励志.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.励志.Location = new System.Drawing.Point(280, 104);
-            this.励志.Margin = new System.Windows.Forms.Padding(4);
-            this.励志.Name = "励志";
-            this.励志.Size = new System.Drawing.Size(112, 34);
-            this.励志.TabIndex = 41;
-            this.励志.Text = "励志";
-            this.励志.UseVisualStyleBackColor = true;
-            this.励志.Click += new System.EventHandler(this.MoodButtons_Click);
-            // 
-            // 兴奋
-            // 
-            this.兴奋.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.兴奋.Location = new System.Drawing.Point(402, 60);
-            this.兴奋.Margin = new System.Windows.Forms.Padding(4);
-            this.兴奋.Name = "兴奋";
-            this.兴奋.Size = new System.Drawing.Size(112, 34);
-            this.兴奋.TabIndex = 40;
-            this.兴奋.Text = "兴奋";
-            this.兴奋.UseVisualStyleBackColor = true;
-            this.兴奋.Click += new System.EventHandler(this.MoodButtons_Click);
-            // 
-            // 伤感
-            // 
-            this.伤感.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.伤感.Location = new System.Drawing.Point(280, 60);
-            this.伤感.Margin = new System.Windows.Forms.Padding(4);
-            this.伤感.Name = "伤感";
-            this.伤感.Size = new System.Drawing.Size(112, 34);
-            this.伤感.TabIndex = 39;
-            this.伤感.Text = "伤感";
-            this.伤感.UseVisualStyleBackColor = true;
-            this.伤感.Click += new System.EventHandler(this.MoodButtons_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(354, 16);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 33);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "心情";
-            // 
-            // 古风
-            // 
-            this.古风.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.古风.Location = new System.Drawing.Point(135, 104);
-            this.古风.Margin = new System.Windows.Forms.Padding(4);
-            this.古风.Name = "古风";
-            this.古风.Size = new System.Drawing.Size(112, 34);
-            this.古风.TabIndex = 31;
-            this.古风.Text = "古风";
-            this.古风.UseVisualStyleBackColor = true;
-            this.古风.Click += new System.EventHandler(this.TopicButtons_Click);
-            // 
-            // 轻音乐
-            // 
-            this.轻音乐.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.轻音乐.Location = new System.Drawing.Point(14, 104);
-            this.轻音乐.Margin = new System.Windows.Forms.Padding(4);
-            this.轻音乐.Name = "轻音乐";
-            this.轻音乐.Size = new System.Drawing.Size(112, 34);
-            this.轻音乐.TabIndex = 29;
-            this.轻音乐.Text = "轻音乐";
-            this.轻音乐.UseVisualStyleBackColor = true;
-            this.轻音乐.Click += new System.EventHandler(this.TopicButtons_Click);
-            // 
-            // 经典
-            // 
-            this.经典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.经典.Location = new System.Drawing.Point(135, 60);
-            this.经典.Margin = new System.Windows.Forms.Padding(4);
-            this.经典.Name = "经典";
-            this.经典.Size = new System.Drawing.Size(112, 34);
-            this.经典.TabIndex = 28;
-            this.经典.Text = "经典";
-            this.经典.UseVisualStyleBackColor = true;
-            this.经典.Click += new System.EventHandler(this.TopicButtons_Click);
-            // 
-            // 翻唱
-            // 
-            this.翻唱.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.翻唱.Location = new System.Drawing.Point(14, 60);
-            this.翻唱.Margin = new System.Windows.Forms.Padding(4);
-            this.翻唱.Name = "翻唱";
-            this.翻唱.Size = new System.Drawing.Size(112, 34);
-            this.翻唱.TabIndex = 27;
-            this.翻唱.Text = "翻唱";
-            this.翻唱.UseVisualStyleBackColor = true;
-            this.翻唱.Click += new System.EventHandler(this.TopicButtons_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(80, 16);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 33);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "主题";
+            this.songCountTimer.Tick += new System.EventHandler(this.songCountTimer_Tick);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 897);
-            this.Controls.Add(this.pinyinPanel);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.songNamePanel);
-            this.Controls.Add(this.singerPanel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Back = ((System.Drawing.Image)(resources.GetObject("$this.Back")));
+            this.ClientSize = new System.Drawing.Size(1154, 600);
             this.Controls.Add(this.publicpanel2);
             this.Controls.Add(this.publicPanel1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pinyinPanel);
+            this.Controls.Add(this.songNamePanel);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.singerPanel1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.publicPanel1.ResumeLayout(false);
+            this.publicPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer1)).EndInit();
             this.publicpanel2.ResumeLayout(false);
             this.publicpanel2.PerformLayout();
@@ -1335,24 +1430,22 @@
             this.songNamePanel.PerformLayout();
             this.singerPanel1.ResumeLayout(false);
             this.singerPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pinyinPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button ChooseSongName;
-        private System.Windows.Forms.Button ChooseCategory;
         private System.Windows.Forms.Button ChoosePingyin;
         private System.Windows.Forms.Button ChooseSinger;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel publicPanel1;
-        private System.Windows.Forms.Button Vounmn;
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Button SeeSong;
         private System.Windows.Forms.Button NextSong;
@@ -1446,5 +1539,13 @@
         private System.Windows.Forms.Button 经典;
         private System.Windows.Forms.Button 翻唱;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button ChooseCategory;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label playlabel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label songlistLabel;
+        private System.Windows.Forms.Timer playerStateTimer;
+        private System.Windows.Forms.Timer songCountTimer;
     }
 }
