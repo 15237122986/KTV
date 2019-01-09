@@ -50,7 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new CCWin.SkinControl.SkinListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.songNamePanel = new System.Windows.Forms.Panel();
@@ -300,10 +300,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(118, 21);
+            this.textBox2.Font = new System.Drawing.Font("楷体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(108, 17);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 24);
+            this.textBox2.Size = new System.Drawing.Size(168, 26);
             this.textBox2.TabIndex = 17;
             // 
             // deleteButton
@@ -340,12 +340,13 @@
             // 
             // listBox2
             // 
+            this.listBox2.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
+            this.listBox2.ItemHeight = 14;
             this.listBox2.Location = new System.Drawing.Point(511, 2);
             this.listBox2.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(210, 52);
+            this.listBox2.Size = new System.Drawing.Size(210, 46);
             this.listBox2.TabIndex = 14;
             // 
             // label1
@@ -373,20 +374,30 @@
             this.panel3.Controls.Add(this.listBox1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(110, 107);
+            this.panel3.Location = new System.Drawing.Point(126, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(542, 378);
+            this.panel3.Size = new System.Drawing.Size(547, 406);
             this.panel3.TabIndex = 76;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
             // listBox1
             // 
+            this.listBox1.Back = null;
+            this.listBox1.BackColor = System.Drawing.Color.Transparent;
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.listBox1.Font = new System.Drawing.Font("楷体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.listBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(140, 15);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(155, 10);
+            this.listBox1.MouseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(384, 352);
-            this.listBox1.TabIndex = 14;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.RowBackColor1 = System.Drawing.Color.Transparent;
+            this.listBox1.RowBackColor2 = System.Drawing.Color.Transparent;
+            this.listBox1.SelectedColor = System.Drawing.Color.Cyan;
+            this.listBox1.Size = new System.Drawing.Size(374, 344);
+            this.listBox1.TabIndex = 57;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // label4
             // 
@@ -409,41 +420,50 @@
             // 
             // songNamePanel
             // 
+            this.songNamePanel.BackColor = System.Drawing.Color.Transparent;
             this.songNamePanel.Controls.Add(this.songNameTextBox);
             this.songNamePanel.Controls.Add(this.songNameListBox);
             this.songNamePanel.Controls.Add(this.songNameSearchButton);
-            this.songNamePanel.Location = new System.Drawing.Point(20, 81);
+            this.songNamePanel.Location = new System.Drawing.Point(119, 93);
             this.songNamePanel.Margin = new System.Windows.Forms.Padding(2);
             this.songNamePanel.Name = "songNamePanel";
-            this.songNamePanel.Size = new System.Drawing.Size(244, 228);
+            this.songNamePanel.Size = new System.Drawing.Size(515, 290);
             this.songNamePanel.TabIndex = 74;
             // 
             // songNameTextBox
             // 
             this.songNameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.songNameTextBox.Location = new System.Drawing.Point(31, 14);
+            this.songNameTextBox.Location = new System.Drawing.Point(42, 14);
             this.songNameTextBox.Name = "songNameTextBox";
-            this.songNameTextBox.Size = new System.Drawing.Size(115, 21);
+            this.songNameTextBox.Size = new System.Drawing.Size(327, 21);
             this.songNameTextBox.TabIndex = 47;
             // 
             // songNameListBox
             // 
+            this.songNameListBox.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.songNameListBox.FormattingEnabled = true;
-            this.songNameListBox.ItemHeight = 12;
+            this.songNameListBox.ItemHeight = 14;
             this.songNameListBox.Location = new System.Drawing.Point(15, 41);
             this.songNameListBox.Name = "songNameListBox";
-            this.songNameListBox.Size = new System.Drawing.Size(190, 160);
+            this.songNameListBox.Size = new System.Drawing.Size(481, 242);
             this.songNameListBox.TabIndex = 46;
             this.songNameListBox.SelectedIndexChanged += new System.EventHandler(this.songNameListBox_SelectedIndexChanged);
             // 
             // songNameSearchButton
             // 
-            this.songNameSearchButton.Location = new System.Drawing.Point(152, 12);
+            this.songNameSearchButton.BackColor = System.Drawing.Color.Transparent;
+            this.songNameSearchButton.FlatAppearance.BorderSize = 0;
+            this.songNameSearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.songNameSearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.songNameSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.songNameSearchButton.Font = new System.Drawing.Font("华文隶书", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.songNameSearchButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.songNameSearchButton.Location = new System.Drawing.Point(390, 14);
             this.songNameSearchButton.Name = "songNameSearchButton";
-            this.songNameSearchButton.Size = new System.Drawing.Size(53, 23);
+            this.songNameSearchButton.Size = new System.Drawing.Size(80, 23);
             this.songNameSearchButton.TabIndex = 49;
             this.songNameSearchButton.Text = "搜索";
-            this.songNameSearchButton.UseVisualStyleBackColor = true;
+            this.songNameSearchButton.UseVisualStyleBackColor = false;
             this.songNameSearchButton.Click += new System.EventHandler(this.songNameSearch_Click);
             // 
             // singerPanel1
@@ -463,11 +483,12 @@
             // 
             // listBox3
             // 
+            this.listBox3.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 12;
+            this.listBox3.ItemHeight = 14;
             this.listBox3.Location = new System.Drawing.Point(16, 96);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(443, 292);
+            this.listBox3.Size = new System.Drawing.Size(443, 284);
             this.listBox3.TabIndex = 75;
             this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
             // 
@@ -489,6 +510,7 @@
             // 
             // textBox13
             // 
+            this.textBox13.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox13.Location = new System.Drawing.Point(33, 31);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
@@ -572,12 +594,13 @@
             // 
             // listBox4
             // 
+            this.listBox4.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 12;
+            this.listBox4.ItemHeight = 14;
             this.listBox4.Location = new System.Drawing.Point(317, 15);
             this.listBox4.Margin = new System.Windows.Forms.Padding(4);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(272, 268);
+            this.listBox4.Size = new System.Drawing.Size(272, 256);
             this.listBox4.TabIndex = 43;
             this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
@@ -1306,6 +1329,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox3.Location = new System.Drawing.Point(9, 17);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
@@ -1315,6 +1339,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.日语);
             this.panel2.Controls.Add(this.欧美);
             this.panel2.Controls.Add(this.粤语);
@@ -1335,14 +1360,19 @@
             this.panel2.Controls.Add(this.经典);
             this.panel2.Controls.Add(this.翻唱);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(22, 374);
+            this.panel2.Location = new System.Drawing.Point(43, 192);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(707, 111);
             this.panel2.TabIndex = 77;
             // 
             // 日语
             // 
+            this.日语.FlatAppearance.BorderSize = 0;
+            this.日语.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.日语.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.日语.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.日语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.日语.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.日语.Location = new System.Drawing.Point(537, 69);
             this.日语.Name = "日语";
             this.日语.Size = new System.Drawing.Size(75, 23);
@@ -1353,7 +1383,12 @@
             // 
             // 欧美
             // 
-            this.欧美.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.欧美.FlatAppearance.BorderSize = 0;
+            this.欧美.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.欧美.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.欧美.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.欧美.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.欧美.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.欧美.Location = new System.Drawing.Point(618, 69);
             this.欧美.Name = "欧美";
             this.欧美.Size = new System.Drawing.Size(75, 23);
@@ -1364,7 +1399,12 @@
             // 
             // 粤语
             // 
-            this.粤语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.粤语.FlatAppearance.BorderSize = 0;
+            this.粤语.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.粤语.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.粤语.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.粤语.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.粤语.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.粤语.Location = new System.Drawing.Point(618, 40);
             this.粤语.Name = "粤语";
             this.粤语.Size = new System.Drawing.Size(75, 23);
@@ -1375,7 +1415,12 @@
             // 
             // 华语
             // 
-            this.华语.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.华语.FlatAppearance.BorderSize = 0;
+            this.华语.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.华语.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.华语.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.华语.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.华语.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.华语.Location = new System.Drawing.Point(537, 40);
             this.华语.Name = "华语";
             this.华语.Size = new System.Drawing.Size(75, 23);
@@ -1387,16 +1432,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(585, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 21);
+            this.label6.Size = new System.Drawing.Size(60, 24);
             this.label6.TabIndex = 63;
             this.label6.Text = "语言";
             // 
             // 民谣
             // 
-            this.民谣.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.民谣.FlatAppearance.BorderSize = 0;
+            this.民谣.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.民谣.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.民谣.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.民谣.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.民谣.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.民谣.Location = new System.Drawing.Point(444, 69);
             this.民谣.Name = "民谣";
             this.民谣.Size = new System.Drawing.Size(75, 23);
@@ -1407,7 +1458,12 @@
             // 
             // 古典
             // 
-            this.古典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古典.FlatAppearance.BorderSize = 0;
+            this.古典.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.古典.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.古典.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.古典.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古典.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.古典.Location = new System.Drawing.Point(363, 69);
             this.古典.Name = "古典";
             this.古典.Size = new System.Drawing.Size(75, 23);
@@ -1418,7 +1474,12 @@
             // 
             // 摇滚
             // 
-            this.摇滚.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.摇滚.FlatAppearance.BorderSize = 0;
+            this.摇滚.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.摇滚.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.摇滚.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.摇滚.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.摇滚.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.摇滚.Location = new System.Drawing.Point(444, 40);
             this.摇滚.Name = "摇滚";
             this.摇滚.Size = new System.Drawing.Size(75, 23);
@@ -1429,7 +1490,12 @@
             // 
             // 流行
             // 
-            this.流行.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.流行.FlatAppearance.BorderSize = 0;
+            this.流行.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.流行.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.流行.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.流行.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.流行.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.流行.Location = new System.Drawing.Point(363, 40);
             this.流行.Name = "流行";
             this.流行.Size = new System.Drawing.Size(75, 23);
@@ -1441,17 +1507,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(407, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 21);
+            this.label5.Size = new System.Drawing.Size(60, 24);
             this.label5.TabIndex = 52;
             this.label5.Text = "流派";
             // 
             // 甜蜜
             // 
             this.甜蜜.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.甜蜜.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.甜蜜.FlatAppearance.BorderSize = 0;
+            this.甜蜜.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.甜蜜.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.甜蜜.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.甜蜜.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.甜蜜.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.甜蜜.Location = new System.Drawing.Point(268, 69);
             this.甜蜜.Name = "甜蜜";
             this.甜蜜.Size = new System.Drawing.Size(75, 23);
@@ -1462,7 +1534,12 @@
             // 
             // 励志
             // 
-            this.励志.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.励志.FlatAppearance.BorderSize = 0;
+            this.励志.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.励志.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.励志.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.励志.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.励志.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.励志.Location = new System.Drawing.Point(187, 69);
             this.励志.Name = "励志";
             this.励志.Size = new System.Drawing.Size(75, 23);
@@ -1473,7 +1550,12 @@
             // 
             // 兴奋
             // 
-            this.兴奋.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.兴奋.FlatAppearance.BorderSize = 0;
+            this.兴奋.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.兴奋.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.兴奋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.兴奋.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.兴奋.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.兴奋.Location = new System.Drawing.Point(268, 40);
             this.兴奋.Name = "兴奋";
             this.兴奋.Size = new System.Drawing.Size(75, 23);
@@ -1484,7 +1566,12 @@
             // 
             // 伤感
             // 
-            this.伤感.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.伤感.FlatAppearance.BorderSize = 0;
+            this.伤感.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.伤感.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.伤感.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.伤感.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.伤感.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.伤感.Location = new System.Drawing.Point(187, 40);
             this.伤感.Name = "伤感";
             this.伤感.Size = new System.Drawing.Size(75, 23);
@@ -1496,16 +1583,22 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(236, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 21);
+            this.label7.Size = new System.Drawing.Size(60, 24);
             this.label7.TabIndex = 38;
             this.label7.Text = "心情";
             // 
             // 古风
             // 
-            this.古风.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古风.FlatAppearance.BorderSize = 0;
+            this.古风.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.古风.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.古风.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.古风.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.古风.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.古风.Location = new System.Drawing.Point(90, 69);
             this.古风.Name = "古风";
             this.古风.Size = new System.Drawing.Size(75, 23);
@@ -1516,7 +1609,12 @@
             // 
             // 轻音乐
             // 
-            this.轻音乐.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.轻音乐.FlatAppearance.BorderSize = 0;
+            this.轻音乐.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.轻音乐.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.轻音乐.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.轻音乐.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.轻音乐.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.轻音乐.Location = new System.Drawing.Point(9, 69);
             this.轻音乐.Name = "轻音乐";
             this.轻音乐.Size = new System.Drawing.Size(75, 23);
@@ -1527,7 +1625,12 @@
             // 
             // 经典
             // 
-            this.经典.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.经典.FlatAppearance.BorderSize = 0;
+            this.经典.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.经典.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.经典.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.经典.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.经典.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.经典.Location = new System.Drawing.Point(90, 40);
             this.经典.Name = "经典";
             this.经典.Size = new System.Drawing.Size(75, 23);
@@ -1538,7 +1641,12 @@
             // 
             // 翻唱
             // 
-            this.翻唱.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.翻唱.FlatAppearance.BorderSize = 0;
+            this.翻唱.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.翻唱.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.翻唱.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.翻唱.Font = new System.Drawing.Font("华文隶书", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.翻唱.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.翻唱.Location = new System.Drawing.Point(9, 40);
             this.翻唱.Name = "翻唱";
             this.翻唱.Size = new System.Drawing.Size(75, 23);
@@ -1550,10 +1658,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Font = new System.Drawing.Font("华文隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(53, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 21);
+            this.label8.Size = new System.Drawing.Size(60, 24);
             this.label8.TabIndex = 26;
             this.label8.Text = "主题";
             // 
@@ -1563,14 +1672,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pinyinPanel);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.singerPanel1);
             this.Controls.Add(this.songNamePanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.publicpanel2);
             this.Controls.Add(this.publicPanel1);
-            this.Controls.Add(this.pinyinPanel);
+            this.Controls.Add(this.singerPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -1626,7 +1735,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListBox listBox2;
@@ -1699,5 +1807,6 @@
         private System.Windows.Forms.Button 翻唱;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
+        private CCWin.SkinControl.SkinListBox listBox1;
     }
 }

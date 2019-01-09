@@ -19,14 +19,14 @@ namespace KTV
         //用来存储音乐文件的id
         List<string> listSongid = new List<string>();
 
-        private static string mysqlconn = "database=ktv;password=1111;user=root;server=localhost;";//data Source=MySQL;charset=utf-8";
+        private static string mysqlconn = "database=ktv;password=123456;user=root;server=localhost;";//data Source=MySQL;charset=utf-8";
         private MySqlConnection conn;
         private MySqlDataAdapter SongAdapter;
         private MySqlDataAdapter SingerAdapter;
         private DataSet dsong;
         private DataSet dsinger;
-        private MySqlCommand findsong,findsinger;
-        private MySqlDataReader sdr,sdr2;
+        //private MySqlCommand findsong,findsinger;
+        //private MySqlDataReader sdr,sdr2;
                
         private Boolean textBoxHasText = false;
 
@@ -132,7 +132,8 @@ namespace KTV
 
                 dr1 = dsinger.Tables["singer"].Rows[0];
                 songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
-                listBox1.Items.Add(songitem);
+                CCWin.SkinControl.SkinListBoxItem songsitem = new CCWin.SkinControl.SkinListBoxItem(songitem);
+                listBox1.Items.Add(songsitem);
                 listSongid.Add(dr.Field<int>("songid") + "");
             }
         }
@@ -161,8 +162,9 @@ namespace KTV
 
                     dr1 = dsinger.Tables["singer"].Rows[0];
                     songitem = dr.Field<string>("songname")+ "  " + dr1.Field<string>("singername");
-                    listBox1.Items.Add(songitem);
-                    listSongid.Add(dr.Field<int>("songid") + "");
+                CCWin.SkinControl.SkinListBoxItem songsitem = new CCWin.SkinControl.SkinListBoxItem(songitem);
+                listBox1.Items.Add(songsitem);
+                listSongid.Add(dr.Field<int>("songid") + "");
             }
         }
         private void MoodButtons_Click(object sender, EventArgs e)
@@ -190,7 +192,8 @@ namespace KTV
 
                 dr1 = dsinger.Tables["singer"].Rows[0];
                 songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
-                listBox1.Items.Add(songitem);
+                CCWin.SkinControl.SkinListBoxItem songsitem = new CCWin.SkinControl.SkinListBoxItem(songitem);
+                listBox1.Items.Add(songsitem);
                 listSongid.Add(dr.Field<int>("songid") + "");
             }
         }
@@ -220,7 +223,10 @@ namespace KTV
 
                 dr1 = dsinger.Tables["singer"].Rows[0];
                 songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
-                listBox1.Items.Add(songitem);
+
+                CCWin.SkinControl.SkinListBoxItem songsitem = new CCWin.SkinControl.SkinListBoxItem(songitem);
+                listBox1.Items.Add(songsitem);
+
                 listSongid.Add(dr.Field<int>("songid") + "");
             }
         }
@@ -323,7 +329,8 @@ namespace KTV
             foreach (DataRow dr in dsong.Tables["song"].Rows)
             {
                 songitem = dr.Field<string>("songname") + "  " + listBox3.Items[index];
-                listBox1.Items.Add(songitem);
+                CCWin.SkinControl.SkinListBoxItem songsitem = new CCWin.SkinControl.SkinListBoxItem(songitem);
+                listBox1.Items.Add(songsitem);
                 listSongid.Add(dr.Field<int>("songid") + "");
             }
             
@@ -532,7 +539,6 @@ namespace KTV
 
         private void songNamePanel_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void singerPanel1_Paint(object sender, PaintEventArgs e)
@@ -554,6 +560,7 @@ namespace KTV
             string songitem;
 
             if (dsong.Tables["song"].Rows.Count == 0)
+
                 MessageBox.Show("对不起，没有找到对应的歌，请重新输入！");
             else
             {
@@ -593,6 +600,12 @@ namespace KTV
         {
             textBox3.Text = "";
         }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
         //<-删除一个字母
         private void button6_Click(object sender, EventArgs e)
         {
@@ -610,6 +623,20 @@ namespace KTV
             Button button = (Button)sender;
             textBox3.AppendText(button.Text);
         }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int index = listBox1.SelectedIndex;
+            //添加到“已点歌单”
+            listBox2.Items.Add(listBox1.Items[index]);
+
+            SongAdapter = new MySqlDataAdapter("select * from song where songid =" + listSongid[index], conn);
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            DataRow dr = dsong.Tables["song"].Rows[0];
+            listSongpath.Add(@dr.Field<string>("path"));
+        }
+
         //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
     }
 }
