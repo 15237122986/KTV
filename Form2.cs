@@ -652,6 +652,11 @@ namespace KTV
                 this.singerPanel1.Visible = true;
             else;
         }
+
+        private void publicPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
         //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
     }
 }
