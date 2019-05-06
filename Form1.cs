@@ -203,11 +203,9 @@ namespace KTV
 
         private void timer1_Tick(object sender, EventArgs e)
         {   
-            
-            Console.WriteLine( MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped);
+            Console.WriteLine( MediaPlayer1.playState);
              if (MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped)
-            {//为什么状态有多个版本,试了好多次，原来是wmppsStopped
-
+            {
                 Console.WriteLine("listSong.Count"+listSong.Count);
                 listSong.RemoveAt(0);
                 chooseBox.Items.RemoveAt(0);

@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using CCWin;
 
 namespace KTV
 {
-    public partial class Form2 : Form
+    public partial class Form2 : CCSkinMain
     {
-        //用来存储音乐文件的全路径
+        //用来存储"已点歌曲"音乐文件的全路径->和listBox2对应
         List<string> listSongpath = new List<string>();
-        //用来存储音乐文件的id
+        //用来存储"搜索出的"(不是已点歌曲)音乐文件的id->一个暂时用来存储的list
         List<string> listSongid = new List<string>();
 
         private static string mysqlconn = "database=ktv;password=123456;user=root;server=localhost;";//data Source=MySQL;charset=utf-8";
@@ -44,6 +45,9 @@ namespace KTV
             this.panel2.Visible = false;
             this.pinyinPanel.Visible = false;
             this.singerPanel1.Visible = false;
+            //打开定时器
+            playerStateTimer.Start();//监测歌曲播放状态:"播放"，"暂停"，"停止"
+            songCountTimer.Start();//监测已点歌曲的数量变化
         }
         //歌手点歌
         private void ChooseSinger_Click(object sender, EventArgs e)
@@ -441,26 +445,104 @@ namespace KTV
             }
         }
         //////////////////////////搜索歌手////////////////////////////////////////////////
+        /////////////////////////////////////////////拼音搜索/////////////////////////////////////////////////
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //清空上一次搜索结果和listSongid
+            listBox4.Items.Clear();
+            listSongid.Clear();
 
-        //////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
+            //显示歌曲列表
+            SongAdapter = new MySqlDataAdapter("select * from song where songpinyin = \'" + textBox3.Text + "\'", conn);
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            string songitem;
+
+            if (dsong.Tables["song"].Rows.Count == 0)
+                MessageBox.Show("对不起，没有找到对应的歌，请重新输入！");
+            else
+            {
+
+                foreach (DataRow dr in dsong.Tables["song"].Rows)
+                {
+                    //找到对应歌手名
+                    SingerAdapter = new MySqlDataAdapter("select * from singer where singerid =" + dr.Field<int>("singerid"), conn);
+                    dsinger = new DataSet();
+                    SingerAdapter.Fill(dsinger, "singer");
+                    DataRow dr1 = dsinger.Tables["singer"].Rows[0];
+                    songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
+                    listBox4.Items.Add(songitem);
+                    listSongid.Add(dr.Field<int>("songid") + "");
+                }
+            }
+        }
+
+        //将搜索列表listBox4添到“已点列表”listBox2
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox4.SelectedIndex;
+            //添加到“已点歌单”
+            listBox2.Items.Add(listBox4.Items[index]);
+
+            SongAdapter = new MySqlDataAdapter("select * from song where songid =" + listSongid[index], conn);
+            dsong = new DataSet();
+            SongAdapter.Fill(dsong, "song");
+            DataRow dr = dsong.Tables["song"].Rows[0];
+            listSongpath.Add(@dr.Field<string>("path"));
+        }
+        //清空
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";
+        }
+        //<-删除一个字母
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string pinyintext = textBox3.Text;
+            if (pinyintext.Length > 0) pinyintext = pinyintext.Substring(0, pinyintext.Length - 1);
+            else MessageBox.Show("已经没有字母了！");
+            textBox3.Text = pinyintext;
+        }
+
+        //搜索button
+        private void pinyinButtons_Click(object sender, EventArgs e)
+        {
+            if (this.textBox3.Text == "请输入歌曲歌名的首字母") this.textBox3.Text = null;
+            this.textBox3.ForeColor = Color.Black;
+            Button button = (Button)sender;
+            textBox3.AppendText(button.Text);
+        }
+
+        /////////////////////////////////////////////拼音搜索/////////////////////////////////////////////////
+        
+//////////////////////////播放、切歌、顶歌、重唱、删除//////////////////////////////////////
         //播放
         private void play_Click(object sender, EventArgs e)
         {
             if (listSongpath.Count != 0)
             {
-                if (playButton.Text == "播放")
+                //if (playButton.Text == "播放")
+                //if (playButton.BackgroundImage.Equals(Image.FromFile(@"C:\Users\刘迪\Pictures\播放.png")))
+                if (playlabel.Text =="播放")
                 {
+
                     textBox1.Text = listBox2.Items[0].ToString();
-                    
                     MediaPlayer1.URL = listSongpath[0];
                     MediaPlayer1.Ctlcontrols.play();
-                    playButton.Text = "暂停";
+                    playButton.BackgroundImage = Image.FromFile(@"C:\Users\刘迪\Pictures\暂停.png");
+                    //TextAlign作为“播放”(MiddleCenter)和“暂停”(TopCenter)状态的一个条件
+                    //playButton.TextAlign = ContentAlignment.TopCenter;
+                    playlabel.Text = "暂停";
 
                 }
                 else
                 {
+                    playButton.BackgroundImage = Image.FromFile(@"C:\Users\刘迪\Pictures\播放.png");
+                    //TextAlign作为“播放”(MiddleCenter)和“暂停”(TopCenter)状态的一个条件
+                    //playButton.TextAlign = ContentAlignment.MiddleCenter;
                     MediaPlayer1.Ctlcontrols.pause();
-                    playButton.Text = "播放";
+                    playButton.BackgroundImage = Image.FromFile(@"C:\Users\刘迪\Pictures\播放.png");
+                    playlabel.Text = "播放";
                 }
             }
             else { MessageBox.Show("没有待播放歌曲了，请点歌！"); }
@@ -525,35 +607,59 @@ namespace KTV
                 MessageBox.Show("没有选中列", "错误提示框");
         }
 
+        //监测歌曲播放状态:"播放"，"暂停"，"停止"
+        private void playerStateTimer_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine(MediaPlayer1.playState);
+
+            //当歌曲状态为"stop"
+            if (MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped)
+            {   //当前已点歌曲列表不为空
+
+                playButton.BackgroundImage = Image.FromFile(@"C:\Users\刘迪\Pictures\播放.png");
+                playlabel.Text = "播放";
+                Console.WriteLine("listSongpath.Count"+ listSongpath.Count);
+                if (listSongpath.Count != 0)
+                {
+                    listSongpath.RemoveAt(0);
+                    listBox2.Items.RemoveAt(0);
+                    MediaPlayer1.URL = listSongpath[0];
+                    MediaPlayer1.Ctlcontrols.play();
+                }
+                else { playerStateTimer.Stop(); MessageBox.Show("没有待播放歌曲了，请点歌！"); }
+
+            }//当歌曲状态为"play"
+            else if(MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                playButton.BackgroundImage = Image.FromFile(@"C:\Users\刘迪\Pictures\暂停.png");
+                playlabel.Text = "暂停";
+            }
+        }
+
+        //监测已点歌曲数量的变化
+        private void songCountTimer_Tick(object sender, EventArgs e)
+        {
+            // if(listSongpath.Count!=)
+            songlistLabel.Text = "已点("+listSongpath.Count + ")";
+        }
+
+        //删除“已点歌曲”
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedIndex >= 0)//如果选中某列
-                listBox2.Items.Remove(listBox2.Items[listBox2.SelectedIndex]);//删除所选列
+            int index = listBox2.SelectedIndex;
+            if(index==0)
+                MessageBox.Show("该歌曲正在播放，可选择切歌");
+            else if (index > 0)//如果选中某列
+            {
+                listBox2.Items.Remove(listBox2.Items[index]);//删除所选列
+                listSongpath.RemoveAt(index);
+            }
             else
                 MessageBox.Show("没有选中列", "错误提示框");
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void songNamePanel_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void singerPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        //拼音搜索
-        private void button5_Click(object sender, EventArgs e)
+        //查看已点歌曲列表
+        private void SeeSong_Click(object sender, EventArgs e)
         {
             //清空上一次搜索结果和listSongid
             listBox4.Items.Clear();
@@ -570,18 +676,8 @@ namespace KTV
                 MessageBox.Show("对不起，没有找到对应的歌，请重新输入！");
             else
             {
-                
-                foreach (DataRow dr in dsong.Tables["song"].Rows)
-                {
-                    //找到对应歌手名
-                    SingerAdapter = new MySqlDataAdapter("select * from singer where singerid =" + dr.Field<int>("singerid"), conn);
-                    dsinger = new DataSet();
-                    SingerAdapter.Fill(dsinger, "singer");
-                    DataRow dr1 = dsinger.Tables["singer"].Rows[0];
-                    songitem = dr.Field<string>("songname") + "  " + dr1.Field<string>("singername");
-                    listBox4.Items.Add(songitem);
-                    listSongid.Add(dr.Field<int>("songid") + "");
-                }
+                listBox2.Visible = true;
+                SeeSong.TextAlign = ContentAlignment.MiddleCenter;
             }
         }
 
