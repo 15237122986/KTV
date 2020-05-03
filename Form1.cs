@@ -81,10 +81,6 @@ namespace KTV
                 MediaPlayer1.URL = listSong[0];
                 MediaPlayer1.Ctlcontrols.play();
                 play_button.Text = "暂停";
-
-                
-                    Console.Write(MediaPlayer1.playState.Equals("已停止"));
-                    Console.Write("数字"+MediaPlayer1.playState.Equals("1"));
                     
             }
             else
@@ -92,11 +88,6 @@ namespace KTV
                 MediaPlayer1.Ctlcontrols.pause();
                 play_button.Text = "播放";
             }
-                Console.WriteLine("status*****:" + MediaPlayer1.status);
-                Console.WriteLine("status.....:" + MediaPlayer1.playState);
-                Console.WriteLine(MediaPlayer1.status.Equals("已停止"));
-                Console.WriteLine(MediaPlayer1.playState.Equals("已停止"));
-
             }
             else { MessageBox.Show("没有待播放歌曲了，请点歌！"); }
         }
@@ -212,11 +203,9 @@ namespace KTV
 
         private void timer1_Tick(object sender, EventArgs e)
         {   
-            
-            Console.WriteLine( MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped);
+            Console.WriteLine( MediaPlayer1.playState);
              if (MediaPlayer1.playState == WMPLib.WMPPlayState.wmppsStopped)
-            {//为什么状态有多个版本,试了好多次，原来是wmppsStopped
-
+            {
                 Console.WriteLine("listSong.Count"+listSong.Count);
                 listSong.RemoveAt(0);
                 chooseBox.Items.RemoveAt(0);
